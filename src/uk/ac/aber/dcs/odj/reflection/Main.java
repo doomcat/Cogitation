@@ -19,13 +19,19 @@ public final class Main {
    public static final String OUTPUT = "output.txt";
    public static final String TAB = "    ";
    public static Log log;
+   public static Log nodes;
+   public static Log edges;
    
    public static void main(String[] args) throws InterruptedException {
       try {
          log = new Log(OUTPUT);
+         nodes = new Log("nodes.txt");
+         edges = new Log("edges.txt");
          log.e("Logging to",OUTPUT);
       } catch (FileNotFoundException e1) {
          log = Log.logger;
+         nodes = Log.logger;
+         edges = Log.logger;
          log.e("Logging to console");
       }
       
@@ -44,24 +50,29 @@ public final class Main {
             Thread.sleep(50);
          }
       }
-      log.pl("//INDIRECTLY ASSOCIATED CLASSES - Nodes");
-      //printHeader();
-      log.delim = ",";
-      log.pl("Id,Connections");
+      
+      // Print nodes list to nodes.txt - to be used by Gephi
+      nodes.delim = ",";
+      nodes.pl("Id,Connections");
       for(Entry<Class,HashSet<Class>> e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
-         log.pl(e.getKey().getName(),e.getValue().size());
+         nodes.pl(e.getKey().getName(),e.getValue().size());
       }
       
-      log.pl("\n//INDIRECTLY ASSOCIATED CLASSES - Edges");
-      log.pl("Source,Target");
+      
+      // Print edges list to edges.txt - to be used by Gephi
+      edges.delim = ",";
+      edges.pl("Source,Target");
+      
       for(Entry<Class,HashSet<Class>>e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
          for(Class c : e.getValue()) {
-            log.pl(e.getKey().getName(),c.getName());
+            edges.pl(c.getName(),e.getKey().getName());
          }
       }
       
+      nodes.delim = " " ;
+      edges.delim = " ";
       log.delim = " ";
 
    }
