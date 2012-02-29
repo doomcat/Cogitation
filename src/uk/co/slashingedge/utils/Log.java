@@ -21,32 +21,58 @@ public final class Log {
       ERROR, PRINT
    }
 
+   /**
+    * Create a default Log object with output & error streams redirected to
+    * System.out and System.err respectively
+    */
    public Log() {
       this(System.out,System.err);
    }
    
+   /**
+    * Create a Log object with a custom output stream. Errors are still
+    * redirected to System.err
+    * @param out The PrintStream to use for output
+    */
    public Log(PrintStream out) {
       this(out,System.err);
    }
    
+   /**
+    * Create a Log object with both output & error directed to custom
+    * PrintStreams.
+    * @param out The PrintStream to use for output
+    * @param err The PrintStream to use for errors
+    */
    public Log(PrintStream out, PrintStream err) {
       this.out = out;
       this.err = err;
    }
    
+   /**
+    * Create a Log object with output directed to a specified file.
+    * @param out The name of the file to direct output to.
+    * @throws FileNotFoundException
+    */
    public Log(String out) throws FileNotFoundException {
       this(new PrintStream(out),System.err);
    }
    
+   /**
+    * Create a Log object with both output & error directed to specified files.
+    * @param out The name of the file to direct output to.
+    * @param err The name of the file to direct errors to.
+    * @throws FileNotFoundException
+    */
    public Log(String out, String err) throws FileNotFoundException {
       this(new PrintStream(out),new PrintStream(err));
    }
    
    /**
     * Wrap a string on word boundaries: if a line is going to be longer than
-    * Log.WIDTH (default: 80 characters), append a newline, therefore wrapping
+    * the specified width, append a newline, therefore wrapping
     * the contents to the second line.
-    * If Log.WIDTH is -1, then wrap() does nothing and simply returns the
+    * If width is -1, then wrap() does nothing and simply returns the
     * original string.
     * @param string The un-wrapped, single-line original string
     * @param width The width to wrap the string to.
@@ -72,9 +98,10 @@ public final class Log {
    }
    
    /**
-    * Word-wrap a string and IMMEDIATELY print it to console... rather than
-    * creating a string out of it first. Slightly faster than the wrap() method
-    * that returns a string as no StringBuilder objects are instanced.
+    * Word-wrap a string and IMMEDIATELY output it... rather than
+    * creating a new, wrapped string out of it first.
+    * Slightly faster than the wrap() method that returns a string as no
+    * StringBuilder objects are instanced.
     * @param level The output to log output too (ERROR or PRINT)
     * @param string The string to print
     */
@@ -110,16 +137,15 @@ public final class Log {
    
    /**
     * Print a string to one of the standard outputs
-    * @param level Which output: ERROR (prints to stderr) or PRINT (stdout)
+    * @param level Which output: ERROR (prints to Log.out) or PRINT (Log.err)
     * @param string The string to print
-    * @throws BrainOverflowException 
     */
    public void p(Level level, String string) {
       this.wrap(level,string);
    }
    
    /**
-    * Print a string to standard output (stdout).
+    * Print a string to output (Log.out).
     * @param string The string to print
     */
    public void p(Object string) {
@@ -127,9 +153,9 @@ public final class Log {
    }
    
    /**
-    * Print a list of strings to one of the standard outputs, with a space
+    * Print a list of objects to one of the standard outputs, with a delimiter
     * between strings (same as Python's print statement) 
-    * @param level Which output: ERROR (prints to stderr) or PRIT (stdout)
+    * @param level Which output: ERROR (prints to Log.err) or PRINT (Log.out)
     * @param strings Strings to print
     */
    public void p(Level level, Object ... strings) {
@@ -144,36 +170,56 @@ public final class Log {
    }
    
    /**
-    * Print a list of strings to standard output (stdout), with a space between
+    * Print a list of objects to output (Log.out), with a delimiter between
     * the strings (same as Python's print statement).
-    * @param strings Strings to print
+    * @param strings Objects to print
     */
    public void p(Object ... strings) {
       this.p(Level.PRINT,strings);
    }
    
    /**
-    * Print a list of strings to standard error (stderr).
-    * @param strings Strings to print
+    * Print a list of objects to error stream (Log.err).
+    * @param strings Objects to print
     */
    public void e(Object ... strings) {
       this.p(Level.ERROR,strings);
       this.p(Level.ERROR,"\n");
    }
    
+   /**
+    * Print a list of objects to output to Log.out, with a delimiter between
+    * the strings, followed by a newline (\n) character.
+    * @param strings Objects to print
+    */
    public void pl(Object ... strings) {
       this.p(Level.PRINT,strings);
       this.p(Level.PRINT,"\n");
    }
 
+   /**
+    * Print a list of objects to the error stream (Log.err) with a delimiter
+    * between the strings.
+    * @param strings The objects to print
+    */
    public static void err(Object ... strings) {
       logger.e(strings);
    }
    
+   /**
+    * Print a list of objects to the default output (System.out), with a
+    * delimiter between them.
+    * @param strings The objects to print
+    */
    public static void print(Object ... strings) {
       logger.p(strings);
    }
    
+   /**
+    * Print a list of objects, with a delimiter between each one, and append
+    * a newline (\n) character, to the default output (System.out).
+    * @param strings The objects to print
+    */
    public static void println(Object ... strings) {
       logger.pl(strings);
    }

@@ -11,8 +11,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 /**
- * Class for analyzing other classes (recursively), for instance Sun Java Class
- * Libraries.
+ * Class for analyzing other classes (recursively).
  * @author Owain Jones [odj@aber.ac.uk]
  *
  */
@@ -22,26 +21,88 @@ public class ClassInspector {
    private Class[] referredClasses;
    private Class[] associatedClasses;
 
+   /**
+    * Find the class with a specified name. Throws an exception if no such
+    * class can be found in the running VM's classpath.
+    * @param cls Name of the class this ClassInspector will be inspecting
+    * @throws ClassNotFoundException
+    */
    public ClassInspector(String cls) throws ClassNotFoundException {
       this(Class.forName(cls));
    }
    
+   /**
+    * @param cls The Class this ClassInspector will be inspecting
+    */
    public ClassInspector(Class cls) {
       inspectedClass = cls;
    }
    
-   public static String[] getReferredClasses(String className) {
+   /**
+    * Get the amount of inspected classes' members (fields): this counts ALL
+    * fields regardless of their visibility (default/private/public etc.) or
+    * annotations (i.e. abstract). 
+    * @return Number of declared fields owned by the inspected class
+    */
+   public int getNumberOfMembers() {
+      return inspectedClass.getDeclaredFields().length;
+   }
+
+   /**
+    * Get the number of inspected classes' methods: this counts ALL methods
+    * regardless of their visibility, so includes default & private methods
+    * as well as public, abstract etc.
+    * @return The number of methods declared in the inspected class
+    */
+   public int getNumberOfMethods() {
+      return inspectedClass.getDeclaredMethods().length;
+   }
+
+   /**
+    * @return The number of public methods in the inspected class
+    */
+   public int getNumberOfPublicMethods() {
+      return this.getMethodsWithModifiers(Modifier.PUBLIC);
+   }
+
+   /**
+    * @return The number of constructors in the inspected class
+    */
+   public int getNumberOfConstructors() {
+      return inspectedClass.getDeclaredConstructors().length;
+   }
+
+   /**
+    * @param methodName Name of the method to analyze
+    * @return Number of arguments this method requires to be passed to it
+    */
+   public int getNumberOfMethodArgs(String methodName) {
       try {
-         return new ClassInspector(className).getReferredClassesAsStrings();
+         Method m = inspectedClass.getMethod(methodName);
+         return m.getParameterTypes().length;
+      } catch (NoSuchMethodException | SecurityException e) {
+         return 0;
+      }
+   }
+
+   /**
+    * @param clsName Name of the class to look for the method in
+    * @param methodName Name of the method to analyze
+    * @return Number of arguments this method in the specified class requires
+    * to be passed to it. Returns 0 if the method or class was not found.
+    */
+   public static int getNumberOfMethodArgs(String clsName, String methodName) {
+      try {
+         return new ClassInspector(clsName).getNumberOfMethodArgs(methodName);
       } catch(ClassNotFoundException e) {
-         return null;
+         return 0;
       }
    }
    
-   public String[] getReferredClassesAsStrings() {
-      return classNames(this.getReferredClasses());
-   }
- 
+   /**
+    * @param source An array of classes
+    * @return An array of strings containing the names of all the classes.
+    */
    public static String[] classNames(Class[] source) {
       String[] names = new String[source.length];
       for(int i=0; i<source.length; i++) {
@@ -49,6 +110,43 @@ public class ClassInspector {
          names[i] = source[i].getName();
       }
       return names;
+   }
+
+   /**
+    * Get all the "inner" Classes a specified class refers to: gets all the  
+    * @param className
+    * @return
+    */
+   public static HashSet<Class> getInnerClasses(Class className) {
+      HashSet<Class> innerClasses = new HashSet<Class>();
+      
+      for(Method m : className.getDeclaredMethods()) {
+         innerClasses.add(m.getReturnType());
+         for(Class c : m.getExceptionTypes()) {
+            innerClasses.add(c);
+         }
+         for(Class c : m.getParameterTypes()) {
+            innerClasses.add(c);
+         }
+      }
+      
+      for(Field f : className.getDeclaredFields()) {
+         innerClasses.add(f.getType());
+      }
+      
+      return innerClasses;
+   }
+
+   public String[] getReferredClassesAsStrings() {
+      return classNames(this.getReferredClasses());
+   }
+ 
+   public static String[] getReferredClasses(String className) {
+      try {
+         return new ClassInspector(className).getReferredClassesAsStrings();
+      } catch(ClassNotFoundException e) {
+         return null;
+      }
    }
 
    public static Class[] getReferredClasses(Class source) {
@@ -130,30 +228,28 @@ public class ClassInspector {
       return relatedClasses.toArray(new Class[0]);
    }
    
-   public static HashSet<Class> getInnerClasses(Class className) {
-      HashSet<Class> innerClasses = new HashSet<Class>();
-      
-      for(Method m : className.getDeclaredMethods()) {
-         innerClasses.add(m.getReturnType());
-         for(Class c : m.getExceptionTypes()) {
-            innerClasses.add(c);
-         }
-         for(Class c : m.getParameterTypes()) {
-            innerClasses.add(c);
+   public int getReferredClassesWithModifiers(int modifiers) {
+      Class[] classes = this.getReferredClasses();
+      int count = 0;
+      for(Class c : classes) {
+         if((c.getModifiers() & modifiers) == modifiers) {
+            count++;
          }
       }
-      
-      for(Field f : className.getDeclaredFields()) {
-         innerClasses.add(f.getType());
-      }
-      
-      return innerClasses;
+      return count;
    }
 
-   public int getNumberOfMembers() {
-      return inspectedClass.getDeclaredFields().length;
+   public int getAssociatedClassesWithModifiers(int modifiers) {
+      Class[] classes = this.getAssociatedClasses();
+      int count = 0;
+      for(Class c : classes) {
+         if((c.getModifiers() & modifiers) == modifiers) {
+            count++;
+         }
+      }
+      return count;
    }
-   
+
    public int getMembersWithModifiers(int modifiers) {
       int count = 0;
       Field[] fields = inspectedClass.getDeclaredFields();
@@ -166,10 +262,6 @@ public class ClassInspector {
       return count;
    }
    
-   public int getNumberOfPublicMethods() {
-      return this.getMethodsWithModifiers(Modifier.PUBLIC);
-   }
-   
    public int getMethodsWithModifiers(int modifiers) {
       int count = 0;
       Method[] methods = inspectedClass.getDeclaredMethods();
@@ -180,23 +272,6 @@ public class ClassInspector {
          }
       }
       return count;
-   }
-   
-   public int getNumberOfMethods() {
-      return inspectedClass.getDeclaredMethods().length;
-   }
-   
-   public int getNumberOfConstructors() {
-      return inspectedClass.getDeclaredConstructors().length;
-   }
-   
-   public int getNumberOfMethodArgs(String methodName) {
-      try {
-         Method m = inspectedClass.getMethod(methodName);
-         return m.getParameterTypes().length;
-      } catch (NoSuchMethodException | SecurityException e) {
-         return 0;
-      }
    }
    
    public static ClassMap getAllInspectedClasses() {
