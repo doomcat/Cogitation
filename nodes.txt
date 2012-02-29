@@ -1,554 +1,553 @@
-Id,Connections 
- java.net.FileNameMap,24 
- java.util.jar.JarVerifier$VerifierStream,24 
- java.net.URLStreamHandler,23 
- java.util.concurrent.Executor,27 
- java.util.regex.Pattern$Branch,28 
- java.lang.ClassFormatError,20 
- java.security.cert.Certificate$CertificateRep,23 
- java.util.jar.Attributes,30 
- java.util.jar.Manifest,31 
- java.util.Queue,25 
- java.lang.UnsupportedOperationException,12 
- java.nio.file.attribute.UserPrincipal,27 
- java.util.LinkedHashMap$1,26 
- java.lang.ClassLoader$NativeLibrary,21 
- java.util.regex.Pattern$LastNode,28 
- sun.net.www.MessageHeader,26 
- java.io.ObjectStreamClass$WeakClassKey,12 
- java.util.Hashtable$1,26 
- java.security.SecureRandomSpi,25 
- java.nio.file.DirectoryStream$Filter,27 
- java.io.ObjectOutputStream$BlockDataOutputStream,21 
- java.lang.reflect.ParameterizedType,8 
- java.io.ObjectStreamException,33 
- java.lang.IllegalArgumentException,34 
- java.nio.file.DirectoryStream,28 
- java.util.HashMap$KeyIterator,21 
- java.nio.channels.FileChannel$MapMode,28 
- java.util.regex.Pattern,88 
- sun.reflect.generics.tree.FieldTypeSignature,18 
- java.io.ObjectInputStream,66 
- java.util.Calendar$CalendarAccessControlContext,29 
- sun.reflect.generics.tree.DoubleSignature,14 
- sun.util.locale.LanguageTag,9 
- java.lang.Class$EnclosingMethodInfo,7 
- java.util.regex.Pattern$Neg,28 
- java.util.jar.JarVerifier$VerifierCodeSource,25 
- java.util.regex.Pattern$LazyLoop,28 
- java.lang.Enum,22 
- java.nio.file.Watchable,27 
- java.text.FieldPosition$1,8 
- java.lang.CharSequence,90 
- java.lang.Class,71 
- java.io.File,31 
- java.util.regex.Pattern$Conditional,28 
- java.util.Formatter$Flags,29 
- java.util.spi.LocaleServiceProvider,33 
- java.util.SortedMap,34 
- sun.net.www.MessageHeader$HeaderIterator,25 
- java.io.DataOutputStream,28 
- java.util.regex.Pattern$Start,28 
- java.security.Provider$UString,22 
- sun.util.locale.BaseLocale$Cache,9 
- java.util.regex.Pattern$UnixDot,28 
- java.io.ObjectInputStream$BlockDataInputStream,10 
- sun.reflect.generics.repository.MethodRepository,14 
- java.util.concurrent.ConcurrentHashMap$KeySet,21 
- java.util.regex.Pattern$Begin,28 
- sun.security.util.ManifestEntryVerifier$SunProviderHolder,25 
- sun.reflect.generics.repository.FieldRepository,9 
- java.security.CodeSource,25 
- java.util.concurrent.atomic.AtomicLong,18 
- java.nio.file.attribute.FileTime$1,28 
- java.lang.annotation.RetentionPolicy,9 
- java.nio.channels.SeekableByteChannel,28 
- java.util.HashMap,54 
- java.lang.Object,257 
- sun.reflect.generics.tree.FormalTypeParameter,14 
- java.util.Iterator,91 
- sun.util.locale.LocaleExtensions,11 
- java.util.Formatter$Conversion,27 
- java.nio.file.attribute.FileAttributeView,26 
- sun.reflect.LangReflectAccess,13 
- java.util.concurrent.ConcurrentHashMap$EntrySet,21 
- java.security.Guard,17 
- java.lang.ref.SoftReference,23 
- java.nio.channels.ReadableByteChannel,30 
- java.io.ByteArrayOutputStream,24 
- java.security.cert.CRL,22 
- java.nio.charset.Charset,33 
- java.util.jar.JarEntry,26 
- java.util.ArrayList$Itr,22 
- java.io.Closeable,47 
- java.net.URI$Parser,9 
- sun.reflect.generics.tree.Signature,19 
- java.util.concurrent.ConcurrentHashMap$WriteThroughEntry,21 
- sun.reflect.generics.tree.VoidDescriptor,14 
- java.io.SyncFailedException,29 
- java.net.SocketPermission,21 
- java.net.Proxy$Type,25 
- java.io.InputStream,42 
- java.security.InvalidKeyException,23 
- java.security.MessageDigest,32 
- java.lang.ref.ReferenceQueue$Null,25 
- java.util.regex.Pattern$GroupRef,28 
- java.nio.MappedByteBuffer,28 
- java.util.regex.Pattern$CharProperty,31 
- sun.net.spi.nameservice.NameService,24 
- java.io.ObjectInput,22 
- java.util.regex.Pattern$All,28 
- java.security.Provider$Service,23 
- java.net.Proxy,25 
- java.lang.reflect.Type,21 
- java.text.Format,12 
- java.lang.ClassLoader$ParallelLoaders,20 
- java.security.Key,26 
- java.util.regex.Pattern$SliceIS,28 
- java.security.NoSuchProviderException,30 
- java.util.regex.Pattern$StartS,28 
- java.util.concurrent.TimeoutException,28 
- java.net.InetAddress,29 
- java.io.PrintStream,28 
- java.lang.Character,37 
- sun.security.util.ManifestEntryVerifier,27 
- java.util.Set,72 
- java.util.regex.Pattern$BitClass,29 
- sun.misc.URLClassPath$Loader,22 
- java.lang.Package,21 
- java.io.ObjectInputStream$HandleTable,12 
- java.io.Flushable,33 
- java.io.ObjectInputStream$ValidationList$Callback,12 
- java.util.regex.Pattern$Behind,28 
- sun.security.util.ManifestDigester,27 
- java.util.concurrent.ConcurrentMap,37 
- java.lang.ClassLoader,24 
- sun.util.LocaleServiceProviderPool$AllAvailableLocales,33 
- java.lang.SecurityManager,8 
- java.nio.channels.FileLock,28 
- java.util.regex.Pattern$CharPropertyNames$CharPropertyFactory,29 
- java.lang.Thread$Caches,14 
- java.lang.reflect.Constructor,15 
- java.util.Hashtable$ValueCollection,26 
- java.io.ObjectInputStream$GetField,10 
- java.lang.reflect.AnnotatedElement,21 
- sun.reflect.ConstructorAccessor,15 
- java.util.LinkedList$1,24 
- java.security.cert.CertPath,24 
- java.io.OutputStream,45 
- java.lang.Thread$UncaughtExceptionHandler,15 
- java.util.List,73 
- java.util.regex.Pattern$Single,28 
- java.util.Map,95 
- java.nio.CharBuffer,34 
- java.nio.file.WatchService,28 
- java.lang.ClassNotFoundException,64 
- java.lang.Character$Subset,31 
- java.util.HashMap$Values,21 
- java.util.regex.PatternSyntaxException,28 
- java.util.HashMap$KeySet,21 
- java.util.regex.Pattern$Category,28 
- java.lang.NoSuchMethodException,7 
- sun.misc.JarIndex,23 
- java.nio.file.FileSystem,26 
- sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar,8 
- java.util.regex.Pattern$TreeInfo,48 
- java.util.Formatter$FormatSpecifier,29 
- java.nio.ByteOrder,28 
- java.security.Provider,39 
- sun.reflect.ReflectionFactory,14 
- sun.misc.Resource,24 
- java.nio.LongBuffer,22 
- java.util.zip.ZipConstants,24 
- sun.util.locale.Extension,9 
- java.lang.InstantiationException,28 
- java.io.ObjectInputStream$ValidationList,12 
- java.net.MalformedURLException,24 
- java.util.TimeZone$DisplayNames,30 
- java.lang.ThreadLocal,36 
- java.util.regex.Pattern$Utype,28 
- java.lang.NumberFormatException,23 
- sun.util.locale.LocaleSyntaxException,8 
- java.lang.String$1,5 
- java.util.Vector,23 
- java.text.spi.DateFormatSymbolsProvider,31 
- java.text.Format$Field,12 
- java.io.ObjectOutputStream$PutFieldImpl,21 
- java.io.PushbackInputStream,26 
- java.nio.channels.FileChannel,29 
- java.lang.reflect.GenericDeclaration,18 
- java.util.regex.Matcher,71 
- java.lang.Readable,22 
- java.nio.file.PathMatcher,25 
- java.text.CharacterIterator,13 
- java.nio.file.attribute.FileTime,30 
- java.util.concurrent.Future,28 
- java.util.jar.JarVerifier,26 
- java.io.FileFilter,23 
- java.util.Calendar,30 
- java.util.regex.Pattern$SliceI,28 
- sun.reflect.generics.tree.BooleanSignature,14 
- java.net.UnknownServiceException,24 
- java.util.LinkedList$ListItr,25 
- java.io.ObjectInputStream$Caches,10 
- sun.misc.URLClassPath$FileLoader,21 
- java.util.ArrayList,30 
- java.util.HashMap$EntrySet,21 
- java.util.regex.Pattern$BnMS,28 
- java.util.jar.JarException,25 
- sun.security.util.Debug,29 
- java.nio.channels.Channel,35 
- sun.reflect.generics.tree.SimpleClassTypeSignature,14 
- java.lang.AbstractStringBuilder,35 
- java.util.Enumeration,53 
- java.lang.ThreadLocal$1,31 
- sun.reflect.generics.visitor.Visitor,19 
- java.util.Hashtable$KeySet,26 
- java.io.DataOutput,25 
- java.net.InetAddress$Cache$Type,26 
- java.util.concurrent.ConcurrentHashMap$KeyIterator,21 
- java.lang.StackTraceElement,3 
- java.util.regex.Pattern$CIBackRef,28 
- java.util.Vector$ListItr,21 
- java.util.regex.Pattern$NotBehind,28 
- java.net.SocketAddress,24 
- sun.reflect.generics.tree.ReturnType,24 
- sun.reflect.generics.tree.Wildcard,14 
- java.security.ProtectionDomain,21 
- java.util.Date,31 
- java.lang.ref.ReferenceQueue$Lock,25 
- java.lang.InheritableThreadLocal,30 
- sun.util.locale.BaseLocale$1,9 
- java.util.Formatter$DateTime,27 
- java.lang.String$CaseInsensitiveComparator,5 
- java.lang.StringBuffer,44 
- java.net.SocketException,26 
- java.util.concurrent.TimeUnit,32 
- java.io.ObjectInputValidation,12 
- sun.reflect.generics.tree.IntSignature,14 
- java.lang.reflect.InvocationTargetException,18 
- java.util.regex.Pattern$SingleU,28 
- java.nio.channels.WritableByteChannel,37 
- sun.reflect.generics.tree.BottomSignature,14 
- java.nio.channels.GatheringByteChannel,27 
- java.util.AbstractList$Itr,24 
- java.security.cert.CertificateEncodingException,24 
- java.util.regex.Pattern$Prolog,28 
- java.util.ArrayList$ListItr,22 
- sun.reflect.MethodAccessor,15 
- java.nio.channels.ScatteringByteChannel,27 
- java.net.ContentHandlerFactory,24 
- java.io.ObjectStreamClass$ClassDataSlot,12 
- java.nio.file.attribute.FileTime$DaysAndNanos,29 
- java.lang.reflect.Method,16 
- sun.reflect.ReflectionFactory$GetReflectionFactoryAction,13 
- java.security.cert.CertPath$CertPathRep,23 
- java.text.MessageFormat$Field,8 
- java.io.ObjectOutputStream$HandleTable,22 
- java.util.Locale$1,6 
- java.nio.file.FileStore,26 
- java.util.MissingResourceException,6 
- sun.util.locale.BaseLocale,14 
- java.io.ObjectInputStream$GetFieldImpl,10 
- java.lang.Long,14 
- sun.misc.URLClassPath$JarLoader,22 
- java.security.PrivilegedAction,14 
- java.nio.charset.CoderResult$Cache,31 
- java.security.PermissionCollection,23 
- java.net.URISyntaxException,10 
- java.util.jar.JarFile,27 
- java.io.Serializable,98 
- java.util.concurrent.Callable,27 
- java.net.InetAddress$Cache,26 
- java.nio.file.WatchKey,28 
- java.math.BigDecimal$StringBuilderHelper,29 
- java.net.InetAddress$CacheEntry,25 
- java.lang.Throwable$WrappedPrintWriter,2 
- sun.reflect.generics.tree.ByteSignature,14 
- java.util.regex.Pattern$Node,41 
- java.util.regex.Pattern$Dollar,28 
- java.nio.FloatBuffer,22 
- sun.reflect.generics.repository.ConstructorRepository,16 
- sun.nio.cs.StreamEncoder,28 
- sun.reflect.FieldAccessor,14 
- java.lang.RuntimePermission,14 
- java.util.regex.Pattern$End,28 
- java.util.Deque,24 
- java.util.jar.JarFile$JarFileEntry,23 
- java.util.HashMap$HashIterator,21 
- java.io.SerialCallbackContext,21 
- java.security.PublicKey,23 
- java.lang.ThreadGroup,16 
- java.util.AbstractList,27 
- sun.nio.ch.Interruptible,14 
- java.lang.ref.ReferenceQueue,33 
- java.io.ObjectStreamClass$FieldReflector,12 
- java.security.MessageDigest$Delegate,26 
- java.lang.Character$CharacterCache,31 
- java.text.DateFormatSymbols$DateFormatSymbolsGetter,31 
- java.io.ObjectOutputStream$PutField,21 
- sun.reflect.generics.tree.ArrayTypeSignature,14 
- java.util.regex.Pattern$Ques,28 
- java.util.Locale$Builder,7 
- java.nio.file.attribute.BasicFileAttributes,26 
- java.net.NetworkInterface,26 
- java.util.Map$Entry,42 
- java.util.regex.Pattern$GroupCurly,28 
- java.util.concurrent.ExecutionException,28 
- java.util.regex.Pattern$SingleS,28 
- sun.util.locale.ParseStatus,9 
- java.math.RoundingMode,31 
- java.util.regex.Pattern$SliceS,28 
- sun.reflect.generics.tree.TypeArgument,16 
- java.lang.Throwable$1,2 
- java.io.ObjectStreamClass,30 
- java.lang.Throwable$PrintStreamOrWriter,2 
- java.lang.ref.Reference,29 
- java.nio.charset.CharacterCodingException,32 
- java.util.Locale,53 
- sun.util.locale.StringTokenIterator,10 
- java.nio.charset.spi.CharsetProvider,30 
- sun.reflect.generics.tree.ClassSignature,20 
- java.lang.ref.ReferenceQueue$1,25 
- java.net.URLStreamHandlerFactory,8 
- java.lang.reflect.Member,19 
- java.util.LinkedList,28 
- java.lang.Exception,37 
- java.nio.channels.AsynchronousFileChannel,27 
- java.util.regex.Pattern$UnixDollar,28 
- java.io.UnsupportedEncodingException,33 
- sun.reflect.generics.repository.ClassRepository,8 
- java.lang.Void,27 
- java.lang.SecurityException,24 
- java.util.Hashtable$Entry,28 
- java.util.regex.Pattern$SliceUS,28 
- java.nio.charset.CharsetEncoder,30 
- java.lang.Throwable,37 
- java.util.LinkedHashMap$LinkedHashIterator,26 
- java.lang.ref.Reference$ReferenceHandler,24 
- java.lang.StringBuilder,38 
- java.lang.Comparable,68 
- java.util.jar.Attributes$Name,26 
- java.util.HashMap$ValueIterator,21 
- java.util.jar.Manifest$FastInputStream,25 
- java.util.Vector$Itr,21 
- java.lang.IllegalAccessException,30 
- java.text.AttributedCharacterIterator$Attribute,13 
- sun.reflect.ConstantPool,7 
- java.util.LinkedHashMap,32 
- java.lang.annotation.Annotation,27 
- java.util.Random,17 
- java.nio.charset.CharsetDecoder,31 
- java.util.Formatter,35 
- sun.misc.Unsafe,35 
- sun.misc.URLClassPath,24 
- java.security.Provider$1,22 
- sun.util.LocaleServiceProviderPool$LocalizedObjectGetter,34 
- java.nio.channels.AsynchronousChannel,27 
- java.util.regex.Pattern$LastMatch,28 
- java.util.HashMap$EntryIterator,21 
- java.util.ArrayList$1,22 
- java.text.Format$FieldDelegate,11 
- sun.reflect.generics.factory.GenericsFactory,21 
- java.util.concurrent.ConcurrentHashMap$HashIterator,21 
- java.util.regex.Pattern$CharPropertyNames,31 
- sun.reflect.generics.tree.TypeTree,16 
- java.nio.DoubleBuffer,22 
- java.util.regex.Pattern$Loop,29 
- java.math.BigInteger,31 
- java.util.Formatter$BigDecimalLayoutForm,30 
- java.util.LinkedHashMap$ValueIterator,26 
- java.util.regex.Pattern$BnM,28 
- java.io.File$TempDirectory,23 
- java.text.FieldPosition$Delegate,8 
- java.util.ArrayList$SubList,22 
- java.net.URL,33 
- java.text.MessageFormat,8 
- java.io.ObjectStreamConstants,21 
- sun.util.LocaleServiceProviderPool,35 
- sun.security.util.ManifestDigester$Position,25 
- java.util.regex.Pattern$SingleI,28 
- java.security.AccessControlContext,32 
- sun.reflect.annotation.AnnotationType,8 
- java.util.regex.MatchResult,30 
- java.io.PrintWriter,4 
- java.util.AbstractList$ListItr,24 
- sun.reflect.generics.tree.LongSignature,14 
- java.io.ObjectStreamClass$MemberSignature,12 
- java.nio.IntBuffer,22 
- java.util.Locale$Category,7 
- java.util.AbstractList$1,24 
- java.util.LinkedList$DescendingIterator,24 
- java.lang.NoSuchFieldException,7 
- java.util.LinkedHashMap$EntryIterator,26 
- java.util.regex.Pattern$Bound,28 
- java.lang.Runnable,28 
- java.io.DataInput,25 
- java.util.regex.Pattern$Dot,28 
- java.util.regex.Pattern$UnixCaret,28 
- java.security.MessageDigestSpi,27 
- java.lang.Appendable,40 
- java.net.URI,27 
- java.net.InetAddressImpl,24 
- java.security.SecureRandom,25 
- java.lang.CloneNotSupportedException,40 
- java.util.concurrent.ConcurrentHashMap$ValueIterator,21 
- java.util.concurrent.ConcurrentHashMap$EntryIterator,21 
- java.security.NoSuchAlgorithmException,32 
- java.lang.Thread$State,15 
- java.util.Hashtable$EntrySet,26 
- java.lang.Character$UnicodeBlock,33 
- java.lang.reflect.WildcardType,8 
- java.security.cert.CRLException,22 
- sun.util.locale.BaseLocale$Key,11 
- java.math.BigDecimal$LongOverflow,29 
- java.nio.file.Path,29 
- java.nio.file.attribute.FileStoreAttributeView,27 
- sun.reflect.generics.tree.FloatSignature,14 
- java.security.AccessControlException,15 
- sun.reflect.generics.tree.TypeSignature,18 
- java.io.FileDescriptor,30 
- java.io.ObjectInputStream$PeekInputStream,11 
- java.lang.Throwable$SentinelHolder,2 
- java.util.regex.UnicodeProp,30 
- java.util.HashMap$Entry,23 
- java.util.regex.Pattern$SliceNode,28 
- java.util.regex.Pattern$CharPropertyNames$CloneableProperty,30 
- sun.reflect.generics.tree.ClassTypeSignature,26 
- java.security.Provider$EngineDescription,22 
- java.util.regex.Pattern$GroupHead,29 
- java.util.spi.LocaleNameProvider,7 
- sun.security.util.ManifestDigester$Entry,25 
- java.io.ObjectOutputStream$Caches,21 
- java.util.Locale$LocaleKey,8 
- java.text.ParseException,11 
- java.io.StreamCorruptedException,26 
- java.lang.AutoCloseable,37 
- java.security.SignatureException,23 
- java.security.cert.CertificateFactorySpi,21 
- java.nio.ByteBuffer,50 
- java.util.LinkedList$Node,27 
- java.util.TimeZone,35 
- java.nio.file.attribute.UserPrincipalLookupService,25 
- java.lang.ref.Reference$1,24 
- sun.reflect.generics.tree.BaseType,23 
- java.security.Provider$ServiceKey,22 
- java.util.Hashtable$Enumerator,26 
- java.math.MathContext,30 
- java.io.FilenameFilter,23 
- java.nio.file.attribute.GroupPrincipal,26 
- java.lang.reflect.Field,23 
- java.lang.Thread$WeakClassKey,14 
- java.util.Locale$LocaleNameGetter,7 
- java.io.ObjectStreamField,12 
- java.lang.Long$LongCache,13 
- java.security.DigestException,28 
- java.util.concurrent.ConcurrentHashMap$HashEntry,24 
- java.lang.ref.WeakReference,29 
- java.io.InvalidObjectException,20 
- java.io.FileSystem,24 
- java.util.Stack,21 
- java.util.concurrent.ConcurrentHashMap$Segment,21 
- java.lang.ThreadLocal$ThreadLocalMap,38 
- java.lang.Character$UnicodeScript,31 
- java.io.ObjectInputStream$HandleTable$HandleList,11 
- java.util.concurrent.ExecutorService,27 
- java.net.UnknownHostException,28 
- java.io.ObjectStreamClass$FieldReflectorKey,12 
- java.util.LinkedHashMap$Entry,28 
- java.io.OutputStreamWriter,26 
- java.nio.ShortBuffer,22 
- java.util.Formatter$FormatString,29 
- java.util.zip.ZipEntry,23 
- java.util.regex.Pattern$Caret,28 
- java.lang.AssertionStatusDirectives,20 
- java.net.URLConnection,26 
- java.security.ProtectionDomain$Key,19 
- java.util.HashMap$1,21 
- java.io.DataInputStream,11 
- java.util.regex.Pattern$Ctype,28 
- java.util.RandomAccess,24 
- java.io.ObjectOutputStream$ReplaceTable,21 
- java.security.DomainCombiner,15 
- java.io.ObjectOutputStream$DebugTraceInfoStack,21 
- java.nio.charset.CoderResult,33 
- java.io.NotActiveException,22 
- java.util.regex.Pattern$BranchConn,28 
- java.lang.Iterable,36 
- sun.util.locale.InternalLocaleBuilder$1,8 
- java.util.Collection,70 
- java.util.ListIterator,41 
- java.lang.ThreadLocal$ThreadLocalMap$Entry,32 
- java.lang.String,241 
- java.util.regex.Pattern$Curly,28 
- java.util.regex.Pattern$GroupTail,28 
- sun.util.calendar.BaseCalendar$Date,33 
- java.util.regex.Pattern$BackRef,28 
- java.io.ObjectOutput,24 
- java.util.regex.Pattern$Pos,28 
- java.net.ContentHandler,25 
- java.util.regex.Pattern$SliceU,28 
- java.io.InvalidClassException,12 
- java.util.Locale$Cache,6 
- java.util.regex.Pattern$First,28 
- sun.reflect.generics.tree.MethodTypeSignature,18 
- java.lang.Cloneable,60 
- java.util.regex.Pattern$NotBehindS,28 
- java.util.regex.Pattern$Block,28 
- java.security.cert.Certificate,25 
- sun.misc.BASE64Decoder,25 
- java.util.concurrent.ConcurrentHashMap$Values,21 
- java.io.ObjectStreamClass$Caches,12 
- java.util.Comparator,32 
- java.nio.channels.ByteChannel,28 
- java.lang.ref.Reference$Lock,24 
- java.text.DateFormatSymbols,32 
- java.lang.InterruptedException,36 
- java.text.ParsePosition,11 
- java.util.Formatter$FormatSpecifier$BigDecimalLayout,28 
- java.security.Permission,31 
- java.nio.file.attribute.AttributeView,29 
- java.util.concurrent.atomic.AtomicInteger,39 
- java.lang.Thread,52 
- java.nio.channels.CompletionHandler,27 
- java.text.AttributedCharacterIterator,12 
- java.io.ObjectStreamClass$EntryFuture,12 
- java.text.FieldPosition,12 
- java.util.regex.Pattern$BmpCharProperty,28 
- java.io.BufferedWriter,26 
- java.lang.reflect.TypeVariable,8 
- sun.reflect.generics.tree.CharSignature,14 
- java.math.BigDecimal,31 
- java.security.cert.CertificateException,23 
- sun.util.resources.OpenListResourceBundle,34 
- sun.reflect.generics.tree.TypeVariableSignature,14 
- sun.misc.MetaIndex,24 
- java.lang.Boolean,24 
- sun.reflect.generics.tree.ShortSignature,14 
- sun.util.calendar.CalendarDate,34 
- sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString,8 
- java.util.Hashtable,35 
- java.util.concurrent.ConcurrentHashMap,31 
- java.io.SerializablePermission,22 
- java.security.cert.CertificateFactory,21 
- java.util.Formatter$FixedString,27 
- java.nio.charset.CodingErrorAction,32 
- java.io.Writer,28 
- java.util.LinkedHashMap$KeyIterator,26 
- java.util.regex.Pattern$Slice,28 
- java.io.IOException,123 
- java.lang.Class$MethodArray,8 
- java.io.ObjectOutputStream,62 
- sun.util.locale.InternalLocaleBuilder,11 
- java.util.regex.Pattern$BehindS,28 
- sun.reflect.generics.tree.Tree,26 
- java.security.Principal,27 
- java.lang.Throwable$WrappedPrintStream,2 
- sun.reflect.generics.visitor.TypeTreeVisitor,40 
- java.io.Externalizable,21 
- java.nio.file.spi.FileSystemProvider,25 
- sun.util.calendar.BaseCalendar,33 
- java.util.regex.Pattern$Script,28 
- sun.util.calendar.Era,33 
- sun.util.LocaleServiceProviderPool$NullProvider,34 
- 
+Id,Label,Connections
+java.lang.Long$LongCache,LongCache,13
+java.io.ObjectInputStream$HandleTable$HandleList,HandleList,11
+java.util.jar.JarVerifier$VerifierCodeSource,VerifierCodeSource,25
+java.net.URLStreamHandler,URLStreamHandler,23
+sun.util.locale.BaseLocale$Key,Key,11
+java.util.regex.Pattern$Bound,Bound,28
+java.lang.ClassFormatError,ClassFormatError,20
+java.security.cert.Certificate$CertificateRep,CertificateRep,23
+java.util.Deque,Deque,24
+java.lang.UnsupportedOperationException,UnsupportedOperationException,12
+sun.util.calendar.BaseCalendar,BaseCalendar,32
+java.lang.ClassLoader$NativeLibrary,NativeLibrary,21
+java.util.regex.Pattern$LastMatch,LastMatch,28
+java.net.ContentHandlerFactory,ContentHandlerFactory,24
+java.io.ObjectStreamClass$WeakClassKey,WeakClassKey,12
+java.util.concurrent.TimeoutException,TimeoutException,29
+java.io.ObjectOutputStream$BlockDataOutputStream,BlockDataOutputStream,21
+java.lang.reflect.ParameterizedType,ParameterizedType,8
+java.io.ObjectStreamException,ObjectStreamException,33
+java.lang.IllegalArgumentException,IllegalArgumentException,33
+java.util.HashMap$KeyIterator,KeyIterator,21
+sun.reflect.generics.tree.Signature,Signature,18
+java.nio.channels.AsynchronousFileChannel,AsynchronousFileChannel,27
+sun.reflect.generics.tree.FieldTypeSignature,FieldTypeSignature,18
+java.io.ObjectInputStream,ObjectInputStream,65
+sun.reflect.generics.tree.DoubleSignature,DoubleSignature,14
+sun.util.locale.LocaleSyntaxException,LocaleSyntaxException,8
+java.lang.Class$EnclosingMethodInfo,EnclosingMethodInfo,7
+java.util.regex.Pattern$Loop,Loop,29
+java.lang.ref.WeakReference,WeakReference,28
+java.util.regex.Pattern$LastNode,LastNode,28
+java.lang.Enum,Enum,22
+java.nio.file.Path,Path,30
+java.lang.CharSequence,CharSequence,88
+java.nio.channels.CompletionHandler,CompletionHandler,27
+java.lang.Class,Class,71
+java.io.File,File,30
+java.util.regex.Pattern$CharPropertyNames,CharPropertyNames,31
+java.util.Formatter$FixedString,FixedString,27
+java.util.spi.LocaleServiceProvider,LocaleServiceProvider,33
+java.nio.file.DirectoryStream$Filter,Filter,27
+java.io.DataOutputStream,DataOutputStream,28
+java.util.regex.Pattern$SliceUS,SliceUS,28
+java.security.Provider$UString,UString,22
+sun.util.locale.BaseLocale$1,,9
+java.text.Format$FieldDelegate,FieldDelegate,10
+java.util.regex.Pattern$UnixDollar,UnixDollar,28
+java.io.ObjectInputStream$BlockDataInputStream,BlockDataInputStream,10
+java.util.concurrent.ConcurrentHashMap$KeyIterator,KeyIterator,21
+java.util.regex.Pattern$BackRef,BackRef,28
+sun.security.util.ManifestDigester,ManifestDigester,27
+sun.reflect.generics.repository.FieldRepository,FieldRepository,9
+java.nio.file.Watchable,Watchable,26
+sun.security.util.ManifestDigester$Position,Position,25
+java.nio.channels.GatheringByteChannel,GatheringByteChannel,29
+java.security.CodeSource,CodeSource,25
+java.net.InetAddress$CacheEntry,CacheEntry,25
+java.nio.channels.AsynchronousChannel,AsynchronousChannel,27
+java.util.HashMap,HashMap,57
+java.nio.file.attribute.BasicFileAttributes,BasicFileAttributes,26
+java.lang.Object,Object,253
+sun.reflect.generics.tree.FormalTypeParameter,FormalTypeParameter,14
+java.util.Iterator,Iterator,89
+java.lang.annotation.RetentionPolicy,RetentionPolicy,9
+java.util.TimeZone$DisplayNames,DisplayNames,34
+sun.util.locale.LocaleExtensions,LocaleExtensions,11
+java.util.Formatter$BigDecimalLayoutForm,BigDecimalLayoutForm,30
+java.util.Vector$ListItr,ListItr,21
+sun.reflect.ConstructorAccessor,ConstructorAccessor,15
+java.util.concurrent.ConcurrentHashMap$EntryIterator,EntryIterator,21
+java.security.Guard,Guard,17
+java.lang.ref.SoftReference,SoftReference,23
+java.util.Calendar,Calendar,30
+java.security.cert.CRL,CRL,22
+java.nio.charset.Charset,Charset,33
+java.util.jar.JarVerifier,JarVerifier,26
+java.util.ArrayList$Itr,Itr,22
+java.util.LinkedList,LinkedList,28
+java.io.Closeable,Closeable,47
+java.net.URI$Parser,Parser,9
+sun.reflect.generics.tree.MethodTypeSignature,MethodTypeSignature,17
+java.util.concurrent.ConcurrentHashMap$Values,Values,21
+sun.reflect.generics.tree.VoidDescriptor,VoidDescriptor,14
+java.net.SocketPermission,SocketPermission,21
+java.io.InputStream,InputStream,42
+java.security.InvalidKeyException,InvalidKeyException,23
+java.nio.file.attribute.FileTime$DaysAndNanos,DaysAndNanos,29
+java.lang.ref.ReferenceQueue$Null,Null,25
+java.security.MessageDigest$Delegate,Delegate,26
+sun.reflect.MethodAccessor,MethodAccessor,15
+java.util.regex.Pattern$GroupHead,GroupHead,29
+sun.reflect.generics.visitor.Visitor,Visitor,18
+java.util.regex.Pattern$Category,Category,28
+java.net.SocketAddress,SocketAddress,24
+java.io.ObjectInput,ObjectInput,22
+java.security.Provider$Service,Service,23
+java.net.Proxy,Proxy,25
+java.lang.reflect.Type,Type,21
+java.lang.ClassLoader$ParallelLoaders,ParallelLoaders,20
+java.security.Key,Key,26
+java.util.concurrent.ConcurrentHashMap$WriteThroughEntry,WriteThroughEntry,21
+java.util.regex.Pattern$SliceI,SliceI,28
+java.security.NoSuchProviderException,NoSuchProviderException,30
+java.util.regex.Pattern$Start,Start,28
+java.net.InetAddress,InetAddress,29
+java.io.PrintStream,PrintStream,28
+java.util.Set,Set,67
+java.util.regex.Pattern$BehindS,BehindS,28
+sun.misc.URLClassPath$Loader,Loader,22
+java.lang.Package,Package,21
+java.io.ObjectInputStream$HandleTable,HandleTable,12
+java.io.Flushable,Flushable,33
+java.nio.file.FileStore,FileStore,26
+java.util.regex.Pattern$Begin,Begin,28
+java.io.ByteArrayOutputStream,ByteArrayOutputStream,24
+java.util.jar.JarFile,JarFile,27
+java.util.concurrent.ConcurrentMap,ConcurrentMap,37
+java.lang.Character$CharacterCache,CharacterCache,31
+java.lang.ClassLoader,ClassLoader,24
+sun.util.LocaleServiceProviderPool$AllAvailableLocales,AllAvailableLocales,33
+java.lang.SecurityManager,SecurityManager,8
+java.lang.Thread$Caches,Caches,14
+java.nio.file.WatchKey,WatchKey,27
+java.lang.reflect.Constructor,Constructor,15
+java.util.Hashtable$EntrySet,EntrySet,27
+java.text.MessageFormat$Field,Field,8
+java.io.ObjectInputStream$GetField,GetField,10
+java.lang.reflect.AnnotatedElement,AnnotatedElement,21
+sun.reflect.ReflectionFactory$GetReflectionFactoryAction,GetReflectionFactoryAction,13
+java.security.cert.CertPath,CertPath,24
+java.io.OutputStream,OutputStream,46
+java.lang.Thread$UncaughtExceptionHandler,UncaughtExceptionHandler,15
+java.util.List,List,73
+java.util.regex.Pattern$Script,Script,28
+java.util.Map,Map,91
+java.nio.CharBuffer,CharBuffer,34
+java.lang.ClassNotFoundException,ClassNotFoundException,63
+sun.reflect.generics.repository.ConstructorRepository,ConstructorRepository,15
+java.util.HashMap$Values,Values,21
+java.util.regex.Matcher,Matcher,71
+java.nio.channels.SeekableByteChannel,SeekableByteChannel,30
+java.util.HashMap$KeySet,KeySet,21
+java.util.regex.Pattern$Caret,Caret,28
+java.lang.NoSuchMethodException,NoSuchMethodException,7
+sun.util.locale.InternalLocaleBuilder$1,,8
+java.util.regex.Pattern$StartS,StartS,28
+java.util.Formatter$Flags,Flags,29
+java.nio.ByteOrder,ByteOrder,28
+java.security.Provider,Provider,40
+sun.reflect.ReflectionFactory,ReflectionFactory,14
+java.util.jar.Attributes,Attributes,33
+sun.misc.Resource,Resource,24
+java.nio.LongBuffer,LongBuffer,22
+java.io.PushbackInputStream,PushbackInputStream,27
+java.lang.InstantiationException,InstantiationException,27
+java.io.ObjectInputStream$ValidationList,ValidationList,12
+java.net.MalformedURLException,MalformedURLException,24
+java.nio.charset.CharacterCodingException,CharacterCodingException,30
+java.util.regex.Pattern$UnixDot,UnixDot,28
+java.nio.channels.ReadableByteChannel,ReadableByteChannel,32
+java.lang.String$1,,5
+java.util.Vector,Vector,23
+java.io.DataInputStream,DataInputStream,11
+java.text.spi.DateFormatSymbolsProvider,DateFormatSymbolsProvider,31
+java.text.AttributedCharacterIterator$Attribute,Attribute,10
+java.io.ObjectOutputStream$PutFieldImpl,PutFieldImpl,21
+java.lang.reflect.GenericDeclaration,GenericDeclaration,17
+java.text.Format$Field,Field,11
+java.text.AttributedCharacterIterator,AttributedCharacterIterator,10
+java.lang.Readable,Readable,22
+java.util.regex.Pattern,Pattern,88
+java.nio.channels.Channel,Channel,33
+java.nio.channels.FileChannel,FileChannel,30
+java.util.concurrent.ExecutorService,ExecutorService,27
+java.util.zip.ZipEntry,ZipEntry,23
+java.security.SecureRandom,SecureRandom,25
+java.math.BigDecimal,BigDecimal,31
+java.util.regex.Pattern$Slice,Slice,28
+java.util.jar.Attributes$Name,Name,26
+sun.reflect.generics.tree.BooleanSignature,BooleanSignature,14
+java.nio.charset.CharsetDecoder,CharsetDecoder,28
+java.net.ContentHandler,ContentHandler,25
+java.util.LinkedList$DescendingIterator,DescendingIterator,24
+java.io.ObjectInputStream$Caches,Caches,10
+sun.misc.URLClassPath$FileLoader,FileLoader,21
+java.util.ArrayList,ArrayList,31
+java.util.HashMap$EntrySet,EntrySet,21
+java.util.regex.Pattern$BnM,BnM,28
+java.util.zip.ZipConstants,ZipConstants,24
+sun.security.util.Debug,Debug,30
+java.security.SecureRandomSpi,SecureRandomSpi,25
+sun.reflect.generics.tree.SimpleClassTypeSignature,SimpleClassTypeSignature,14
+java.util.Enumeration,Enumeration,53
+java.lang.InheritableThreadLocal,InheritableThreadLocal,34
+java.nio.charset.CodingErrorAction,CodingErrorAction,30
+java.util.Hashtable$Entry,Entry,29
+java.io.DataOutput,DataOutput,25
+java.lang.Character$Subset,Subset,31
+java.util.concurrent.ConcurrentHashMap$HashIterator,HashIterator,21
+java.lang.StackTraceElement,StackTraceElement,3
+java.nio.file.attribute.AttributeView,AttributeView,29
+java.util.regex.Pattern$BranchConn,BranchConn,28
+java.util.Vector$Itr,Itr,21
+java.util.regex.Pattern$Node,Node,41
+sun.reflect.generics.tree.ReturnType,ReturnType,23
+sun.reflect.generics.tree.Wildcard,Wildcard,14
+java.security.ProtectionDomain,ProtectionDomain,21
+java.lang.Character$UnicodeBlock,UnicodeBlock,31
+java.util.TimeZone,TimeZone,35
+java.lang.ref.ReferenceQueue$Lock,Lock,25
+sun.util.locale.LanguageTag,LanguageTag,9
+java.util.regex.PatternSyntaxException,PatternSyntaxException,28
+java.util.Formatter$Conversion,Conversion,27
+java.lang.String$CaseInsensitiveComparator,CaseInsensitiveComparator,5
+java.lang.StringBuffer,StringBuffer,42
+java.io.ObjectInputValidation,ObjectInputValidation,12
+java.util.Hashtable$ValueCollection,ValueCollection,27
+sun.reflect.generics.tree.IntSignature,IntSignature,14
+java.lang.reflect.InvocationTargetException,InvocationTargetException,17
+java.util.regex.Pattern$SingleS,SingleS,28
+sun.reflect.generics.tree.BottomSignature,BottomSignature,14
+java.util.AbstractList$1,,24
+java.nio.charset.CharsetEncoder,CharsetEncoder,30
+java.security.cert.CertificateEncodingException,CertificateEncodingException,24
+java.util.regex.Pattern$Pos,Pos,28
+java.util.ArrayList$ListItr,ListItr,22
+java.util.concurrent.TimeUnit,TimeUnit,33
+sun.reflect.generics.repository.MethodRepository,MethodRepository,14
+java.net.UnknownServiceException,UnknownServiceException,24
+java.io.ObjectStreamClass$ClassDataSlot,ClassDataSlot,12
+java.security.MessageDigest,MessageDigest,32
+sun.reflect.generics.tree.ClassSignature,ClassSignature,19
+java.lang.NumberFormatException,NumberFormatException,23
+sun.util.calendar.CalendarDate,CalendarDate,33
+java.lang.reflect.Method,Method,16
+java.security.cert.CertPath$CertPathRep,CertPathRep,23
+java.nio.channels.ScatteringByteChannel,ScatteringByteChannel,29
+java.lang.ThreadLocal$1,,28
+java.io.ObjectOutputStream$HandleTable,HandleTable,22
+java.util.Locale$1,,6
+java.util.MissingResourceException,MissingResourceException,6
+java.lang.ThreadLocal,ThreadLocal,33
+sun.util.locale.BaseLocale,BaseLocale,14
+java.util.jar.JarFile$JarFileEntry,JarFileEntry,23
+sun.util.locale.StringTokenIterator,StringTokenIterator,10
+java.io.ObjectInputStream$GetFieldImpl,GetFieldImpl,10
+java.lang.Long,Long,14
+sun.misc.URLClassPath$JarLoader,JarLoader,22
+java.security.PermissionCollection,PermissionCollection,23
+java.net.URISyntaxException,URISyntaxException,10
+java.nio.channels.FileLock,FileLock,29
+java.io.Serializable,Serializable,101
+java.math.BigDecimal$StringBuilderHelper,StringBuilderHelper,29
+java.net.InetAddress$Cache,Cache,26
+sun.security.util.ManifestEntryVerifier$SunProviderHolder,SunProviderHolder,26
+java.lang.Throwable$WrappedPrintWriter,WrappedPrintWriter,2
+sun.reflect.generics.tree.ByteSignature,ByteSignature,14
+java.util.regex.Pattern$Neg,Neg,28
+java.util.regex.Pattern$Curly,Curly,28
+java.nio.FloatBuffer,FloatBuffer,22
+sun.reflect.LangReflectAccess,LangReflectAccess,13
+java.io.OutputStreamWriter,OutputStreamWriter,26
+sun.reflect.FieldAccessor,FieldAccessor,14
+java.util.jar.JarEntry,JarEntry,27
+java.lang.RuntimePermission,RuntimePermission,14
+sun.nio.cs.StreamEncoder,StreamEncoder,28
+java.util.regex.Pattern$Dot,Dot,28
+java.util.LinkedList$Node,Node,26
+java.util.HashMap$HashIterator,HashIterator,21
+java.util.concurrent.Executor,Executor,28
+java.io.SerialCallbackContext,SerialCallbackContext,21
+java.security.PublicKey,PublicKey,23
+java.lang.ThreadGroup,ThreadGroup,16
+java.util.AbstractList,AbstractList,27
+java.util.AbstractList$ListItr,ListItr,24
+sun.nio.ch.Interruptible,Interruptible,14
+sun.net.www.MessageHeader,MessageHeader,26
+java.lang.ref.ReferenceQueue,ReferenceQueue,33
+java.io.ObjectStreamClass$FieldReflector,FieldReflector,12
+java.text.DateFormatSymbols$DateFormatSymbolsGetter,DateFormatSymbolsGetter,31
+java.nio.file.attribute.UserPrincipalLookupService,UserPrincipalLookupService,25
+java.io.ObjectOutputStream$PutField,PutField,21
+sun.reflect.generics.tree.ArrayTypeSignature,ArrayTypeSignature,14
+java.util.regex.Pattern$Prolog,Prolog,28
+java.util.Locale$Builder,Builder,7
+sun.net.spi.nameservice.NameService,NameService,24
+java.util.Map$Entry,Entry,43
+java.util.regex.Pattern$First,First,28
+java.util.LinkedHashMap$LinkedHashIterator,LinkedHashIterator,26
+java.util.regex.Pattern$SingleI,SingleI,28
+java.math.RoundingMode,RoundingMode,31
+java.util.regex.Pattern$SliceNode,SliceNode,28
+java.util.Calendar$CalendarAccessControlContext,CalendarAccessControlContext,29
+sun.reflect.generics.tree.TypeArgument,TypeArgument,16
+java.lang.Throwable$1,,2
+java.io.ObjectStreamClass,ObjectStreamClass,30
+java.lang.Throwable$PrintStreamOrWriter,PrintStreamOrWriter,2
+java.lang.ref.Reference,Reference,29
+java.util.Hashtable$KeySet,KeySet,27
+java.nio.file.attribute.FileTime$1,,28
+java.util.Locale,Locale,50
+sun.util.locale.ParseStatus,ParseStatus,9
+java.lang.ref.ReferenceQueue$1,,25
+java.net.URLStreamHandlerFactory,URLStreamHandlerFactory,8
+java.lang.reflect.Member,Member,18
+java.util.regex.Pattern$Utype,Utype,28
+java.lang.Exception,Exception,38
+java.util.regex.Pattern$UnixCaret,UnixCaret,28
+java.io.UnsupportedEncodingException,UnsupportedEncodingException,33
+java.util.concurrent.Future,Future,28
+sun.reflect.generics.repository.ClassRepository,ClassRepository,8
+java.lang.Void,Void,27
+java.util.spi.LocaleNameProvider,LocaleNameProvider,7
+java.lang.SecurityException,SecurityException,24
+java.util.regex.Pattern$CharPropertyNames$CloneableProperty,CloneableProperty,30
+java.util.regex.Pattern$SliceU,SliceU,28
+java.lang.Throwable,Throwable,37
+java.util.LinkedHashMap$EntryIterator,EntryIterator,26
+java.lang.ref.Reference$ReferenceHandler,ReferenceHandler,24
+java.security.MessageDigestSpi,MessageDigestSpi,27
+java.lang.Comparable,Comparable,65
+java.util.regex.MatchResult,MatchResult,30
+java.util.HashMap$ValueIterator,ValueIterator,21
+java.util.jar.Manifest,Manifest,31
+java.lang.IllegalAccessException,IllegalAccessException,29
+java.text.FieldPosition$1,,9
+sun.reflect.ConstantPool,ConstantPool,7
+java.net.InetAddress$Cache$Type,Type,26
+java.lang.annotation.Annotation,Annotation,26
+java.util.Random,Random,17
+java.io.FileDescriptor,FileDescriptor,32
+java.nio.file.PathMatcher,PathMatcher,25
+java.nio.charset.CoderResult,CoderResult,31
+java.util.Formatter,Formatter,35
+sun.misc.Unsafe,Unsafe,37
+sun.misc.URLClassPath,URLClassPath,24
+java.security.Provider$1,,22
+sun.util.LocaleServiceProviderPool$LocalizedObjectGetter,LocalizedObjectGetter,34
+java.util.jar.JarException,JarException,26
+java.util.LinkedHashMap,LinkedHashMap,32
+java.util.regex.Pattern$GroupTail,GroupTail,28
+java.util.HashMap$EntryIterator,EntryIterator,21
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString,CaseInsensitiveString,8
+java.nio.file.attribute.FileStoreAttributeView,FileStoreAttributeView,27
+java.util.ArrayList$1,,22
+sun.reflect.generics.factory.GenericsFactory,GenericsFactory,20
+java.util.concurrent.ConcurrentHashMap$EntrySet,EntrySet,21
+java.util.regex.Pattern$CharProperty,CharProperty,31
+sun.reflect.generics.tree.TypeTree,TypeTree,16
+java.nio.DoubleBuffer,DoubleBuffer,22
+java.util.regex.Pattern$LazyLoop,LazyLoop,28
+java.math.BigInteger,BigInteger,31
+java.lang.ThreadLocal$ThreadLocalMap$Entry,Entry,29
+java.util.LinkedHashMap$KeyIterator,KeyIterator,26
+java.nio.channels.WritableByteChannel,WritableByteChannel,39
+java.util.regex.Pattern$BmpCharProperty,BmpCharProperty,28
+sun.util.calendar.Era,Era,32
+java.util.Formatter$FormatSpecifier$BigDecimalLayout,BigDecimalLayout,28
+java.util.ArrayList$SubList,SubList,22
+java.net.URL,URL,33
+java.io.FilenameFilter,FilenameFilter,23
+java.text.MessageFormat,MessageFormat,8
+java.io.ObjectStreamConstants,ObjectStreamConstants,21
+sun.util.LocaleServiceProviderPool,LocaleServiceProviderPool,35
+java.util.regex.Pattern$Single,Single,28
+java.security.AccessControlContext,AccessControlContext,32
+sun.reflect.annotation.AnnotationType,AnnotationType,8
+java.nio.channels.FileChannel$MapMode,MapMode,30
+java.io.PrintWriter,PrintWriter,4
+java.util.AbstractList$Itr,Itr,24
+sun.reflect.generics.tree.LongSignature,LongSignature,14
+java.io.ObjectStreamClass$MemberSignature,MemberSignature,12
+java.nio.IntBuffer,IntBuffer,22
+java.util.Locale$Category,Category,7
+java.util.LinkedList$1,,24
+java.lang.NoSuchFieldException,NoSuchFieldException,7
+java.util.LinkedHashMap$1,,26
+java.nio.file.spi.FileSystemProvider,FileSystemProvider,25
+java.util.regex.Pattern$BnMS,BnMS,28
+java.lang.Runnable,Runnable,29
+java.io.DataInput,DataInput,25
+java.util.regex.Pattern$Dollar,Dollar,28
+sun.util.calendar.BaseCalendar$Date,Date,32
+java.util.regex.Pattern$TreeInfo,TreeInfo,48
+java.nio.file.attribute.UserPrincipal,UserPrincipal,27
+java.lang.Appendable,Appendable,39
+java.net.URI,URI,27
+java.net.NetworkInterface,NetworkInterface,26
+java.lang.CloneNotSupportedException,CloneNotSupportedException,40
+java.util.concurrent.ConcurrentHashMap$Segment,Segment,21
+java.nio.file.attribute.FileTime,FileTime,30
+java.security.NoSuchAlgorithmException,NoSuchAlgorithmException,32
+java.io.File$TempDirectory,TempDirectory,23
+java.lang.Thread$State,State,15
+sun.misc.BASE64Decoder,BASE64Decoder,26
+java.util.Hashtable$Enumerator,Enumerator,27
+java.lang.reflect.WildcardType,WildcardType,8
+java.security.cert.CRLException,CRLException,22
+sun.util.locale.BaseLocale$Cache,Cache,9
+java.nio.charset.spi.CharsetProvider,CharsetProvider,27
+java.math.BigDecimal$LongOverflow,LongOverflow,29
+java.io.FileFilter,FileFilter,23
+java.util.regex.UnicodeProp,UnicodeProp,30
+sun.reflect.generics.tree.FloatSignature,FloatSignature,14
+java.security.AccessControlException,AccessControlException,15
+sun.reflect.generics.tree.TypeSignature,TypeSignature,18
+java.io.ObjectInputStream$PeekInputStream,PeekInputStream,11
+java.lang.Throwable$SentinelHolder,SentinelHolder,2
+java.lang.Character$UnicodeScript,UnicodeScript,33
+java.util.HashMap$Entry,Entry,23
+java.nio.file.FileSystem,FileSystem,26
+java.util.regex.Pattern$SliceIS,SliceIS,28
+sun.reflect.generics.tree.ClassTypeSignature,ClassTypeSignature,25
+java.security.Provider$EngineDescription,EngineDescription,22
+java.util.regex.Pattern$GroupCurly,GroupCurly,28
+java.util.regex.Pattern$CharPropertyNames$CharPropertyFactory,CharPropertyFactory,29
+java.nio.channels.ByteChannel,ByteChannel,27
+java.io.ObjectOutputStream$Caches,Caches,21
+java.lang.Character,Character,37
+java.nio.file.WatchService,WatchService,28
+java.util.Locale$LocaleKey,LocaleKey,8
+java.text.ParsePosition,ParsePosition,8
+java.io.StreamCorruptedException,StreamCorruptedException,27
+java.lang.AutoCloseable,AutoCloseable,37
+java.security.SignatureException,SignatureException,23
+java.security.cert.CertificateFactorySpi,CertificateFactorySpi,21
+java.nio.ByteBuffer,ByteBuffer,50
+java.util.LinkedList$ListItr,ListItr,25
+java.lang.ref.Reference$1,,24
+sun.reflect.generics.tree.BaseType,BaseType,23
+java.security.Provider$ServiceKey,ServiceKey,22
+java.util.Hashtable$1,,27
+java.util.jar.Manifest$FastInputStream,FastInputStream,25
+java.math.MathContext,MathContext,30
+java.io.FileSystem,FileSystem,24
+java.lang.reflect.Field,Field,23
+java.lang.Thread$WeakClassKey,WeakClassKey,14
+java.util.Locale$LocaleNameGetter,LocaleNameGetter,7
+java.io.ObjectStreamField,ObjectStreamField,12
+java.nio.file.attribute.GroupPrincipal,GroupPrincipal,26
+java.util.concurrent.ConcurrentHashMap$HashEntry,HashEntry,24
+java.io.InvalidObjectException,InvalidObjectException,18
+java.security.DigestException,DigestException,28
+java.util.Stack,Stack,21
+java.util.concurrent.ConcurrentHashMap$KeySet,KeySet,21
+java.lang.ThreadLocal$ThreadLocalMap,ThreadLocalMap,39
+java.io.ObjectInputStream$ValidationList$Callback,Callback,12
+java.util.Formatter$FormatString,FormatString,29
+java.net.UnknownHostException,UnknownHostException,28
+java.io.ObjectStreamClass$FieldReflectorKey,FieldReflectorKey,12
+java.io.BufferedWriter,BufferedWriter,26
+java.nio.ShortBuffer,ShortBuffer,22
+java.util.Formatter$FormatSpecifier,FormatSpecifier,29
+java.util.regex.Pattern$CIBackRef,CIBackRef,28
+java.lang.AssertionStatusDirectives,AssertionStatusDirectives,20
+java.net.URLConnection,URLConnection,25
+java.text.Format,Format,10
+java.security.ProtectionDomain$Key,Key,19
+java.net.Proxy$Type,Type,25
+sun.security.util.ManifestEntryVerifier,ManifestEntryVerifier,27
+java.util.HashMap$1,,21
+java.util.regex.Pattern$Conditional,Conditional,28
+java.util.RandomAccess,RandomAccess,24
+sun.util.locale.Extension,Extension,9
+java.util.concurrent.ExecutionException,ExecutionException,29
+java.io.ObjectOutputStream$ReplaceTable,ReplaceTable,21
+java.nio.file.attribute.FileAttributeView,FileAttributeView,26
+java.security.DomainCombiner,DomainCombiner,15
+java.io.ObjectOutputStream$DebugTraceInfoStack,DebugTraceInfoStack,21
+java.text.DateFormatSymbols,DateFormatSymbols,32
+java.io.NotActiveException,NotActiveException,22
+java.util.regex.Pattern$Branch,Branch,28
+java.lang.Iterable,Iterable,36
+java.util.Collection,Collection,69
+java.util.ListIterator,ListIterator,40
+java.nio.charset.CoderResult$Cache,Cache,30
+sun.security.util.ManifestDigester$Entry,Entry,25
+java.lang.String,String,243
+java.util.LinkedHashMap$ValueIterator,ValueIterator,26
+java.util.regex.Pattern$Ctype,Ctype,28
+java.util.regex.Pattern$GroupRef,GroupRef,28
+java.util.regex.Pattern$All,All,28
+java.io.ObjectOutput,ObjectOutput,24
+java.util.regex.Pattern$NotBehindS,NotBehindS,28
+java.net.FileNameMap,FileNameMap,24
+java.util.regex.Pattern$SliceS,SliceS,28
+java.net.InetAddressImpl,InetAddressImpl,24
+java.io.InvalidClassException,InvalidClassException,12
+java.util.Locale$Cache,Cache,6
+sun.util.locale.InternalLocaleBuilder,InternalLocaleBuilder,11
+java.util.regex.Pattern$End,End,28
+java.util.Queue,Queue,25
+java.nio.file.DirectoryStream,DirectoryStream,28
+java.util.jar.JarVerifier$VerifierStream,VerifierStream,24
+java.net.SocketException,SocketException,25
+java.lang.Cloneable,Cloneable,58
+java.util.regex.Pattern$NotBehind,NotBehind,28
+java.util.regex.Pattern$BitClass,BitClass,29
+java.security.cert.Certificate,Certificate,25
+sun.misc.MetaIndex,MetaIndex,24
+java.util.concurrent.ConcurrentHashMap$ValueIterator,ValueIterator,21
+java.io.ObjectStreamClass$Caches,Caches,12
+java.util.Comparator,Comparator,29
+java.lang.ref.Reference$Lock,Lock,24
+java.util.SortedMap,SortedMap,31
+java.util.Date,Date,34
+java.lang.InterruptedException,InterruptedException,37
+java.text.FieldPosition,FieldPosition,11
+java.security.Permission,Permission,31
+java.text.FieldPosition$Delegate,Delegate,9
+java.security.PrivilegedAction,PrivilegedAction,14
+java.util.concurrent.atomic.AtomicInteger,AtomicInteger,38
+java.lang.Thread,Thread,52
+java.text.ParseException,ParseException,8
+java.io.ObjectStreamClass$EntryFuture,EntryFuture,12
+java.text.CharacterIterator,CharacterIterator,9
+java.util.regex.Pattern$Block,Block,28
+sun.net.www.MessageHeader$HeaderIterator,HeaderIterator,25
+java.lang.reflect.TypeVariable,TypeVariable,8
+sun.reflect.generics.tree.CharSignature,CharSignature,14
+java.lang.StringBuilder,StringBuilder,37
+java.lang.AbstractStringBuilder,AbstractStringBuilder,34
+java.io.SyncFailedException,SyncFailedException,31
+java.security.cert.CertificateException,CertificateException,23
+sun.util.resources.OpenListResourceBundle,OpenListResourceBundle,34
+sun.reflect.generics.tree.TypeVariableSignature,TypeVariableSignature,14
+sun.misc.JarIndex,JarIndex,23
+java.lang.Boolean,Boolean,24
+sun.reflect.generics.tree.ShortSignature,ShortSignature,14
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar,CaseInsensitiveChar,8
+java.util.Hashtable,Hashtable,36
+java.util.concurrent.Callable,Callable,28
+java.util.concurrent.ConcurrentHashMap,ConcurrentHashMap,31
+java.io.SerializablePermission,SerializablePermission,22
+java.security.cert.CertificateFactory,CertificateFactory,21
+java.util.Formatter$DateTime,DateTime,27
+java.io.Writer,Writer,28
+java.util.LinkedHashMap$Entry,Entry,28
+java.util.regex.Pattern$SingleU,SingleU,28
+java.security.Principal,Principal,28
+java.io.IOException,IOException,120
+java.lang.Class$MethodArray,MethodArray,8
+java.io.ObjectOutputStream,ObjectOutputStream,61
+java.util.regex.Pattern$Behind,Behind,28
+sun.reflect.generics.tree.Tree,Tree,23
+java.lang.Throwable$WrappedPrintStream,WrappedPrintStream,2
+java.util.concurrent.atomic.AtomicLong,AtomicLong,18
+sun.reflect.generics.visitor.TypeTreeVisitor,TypeTreeVisitor,39
+java.io.Externalizable,Externalizable,21
+java.nio.MappedByteBuffer,MappedByteBuffer,30
+java.util.regex.Pattern$Ques,Ques,28
+sun.util.LocaleServiceProviderPool$NullProvider,NullProvider,34

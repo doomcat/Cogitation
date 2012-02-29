@@ -36,6 +36,8 @@ public final class Main {
       }
       
       log.width = -1;
+      nodes.width = -1;
+      edges.width = -1;
       String[][] references = new String[args.length][];
 
       for(int i=0; i<args.length; i++) {
@@ -52,22 +54,24 @@ public final class Main {
       }
       
       // Print nodes list to nodes.txt - to be used by Gephi
+      nodes.pl("Id,Label,Connections");
       nodes.delim = ",";
-      nodes.pl("Id,Connections");
       for(Entry<Class,HashSet<Class>> e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
-         nodes.pl(e.getKey().getName(),e.getValue().size());
+         nodes.pl(e.getKey().getName(),e.getKey().getSimpleName(),
+                  e.getValue().size());
       }
       
-      
       // Print edges list to edges.txt - to be used by Gephi
-      edges.delim = ",";
       edges.pl("Source,Target");
+      edges.delim = ",";
       
       for(Entry<Class,HashSet<Class>>e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
          for(Class c : e.getValue()) {
-            edges.pl(c.getName(),e.getKey().getName());
+            if(e.getKey() != c && e.getKey().getName() != null && c.getName() != null) {
+               edges.pl(c.getName(),e.getKey().getName());
+            }
          }
       }
       
