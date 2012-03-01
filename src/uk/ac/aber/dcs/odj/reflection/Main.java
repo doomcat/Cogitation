@@ -81,12 +81,18 @@ public final class Main {
       }
       
       // Print nodes list to nodes.txt - to be used by Gephi
-      nodes.pl("Id,Label,Connections");
+      //nodes.pl("Id,Label,Connections");
+      printHeader(nodes);
       nodes.delim = ",";
-      for(Entry<Class,HashSet<Class>> e :
+      /*for(Entry<Class,HashSet<Class>> e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
          nodes.pl(e.getKey().getName(),e.getKey().getSimpleName(),
                   e.getValue().size());
+      }*/
+      ClassMap map = (ClassMap) ClassInspector.getAllInspectedClasses().clone();
+      for(Class c : map.keySet()) {
+         classInfo(nodes,c);
+         nodes.pl();
       }
       
       // Print edges list to edges.txt - to be used by Gephi
@@ -95,7 +101,7 @@ public final class Main {
       for(Entry<Class,HashSet<Class>>e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
          for(Class c : e.getValue()) {
-            if(e.getKey() != c && e.getKey().getName() != null &&
+           if(e.getKey() != c && e.getKey().getName() != null &&
                      c.getName() != null) {
                edges.pl(c.getName(),e.getKey().getName());
             }
@@ -108,16 +114,24 @@ public final class Main {
 
    }
    
-   public static void classInfo(String cls) throws ClassNotFoundException {
-      classInfo(Class.forName(cls));
+   public static void classInfo(Log l, String cls)
+            throws ClassNotFoundException {
+      classInfo(log,Class.forName(cls));
    }
    
-   public static void classInfo(Class cls) {
-      String old = String.valueOf(log.delim);
-      log.delim = ",";
+   public static void classInfo(Log l, Class cls) {
+      l.delim = ",";
+      
+      ClassMap map = ClassInspector.getAllInspectedClasses();
+      int connections = 0;
+      if(map.containsKey(cls) && map.get(cls) != null) {
+         connections = map.get(cls).size();
+      }
       
       ClassInspector inspect = new ClassInspector(cls);
-      log.p(cls.getName(),
+      l.p(cls.getName(),
+               cls.getSimpleName(),
+               cls.getName(),
                inspect.getNumberOfMethods(),
                inspect.getNumberOfConstructors(),
                inspect.getNumberOfPublicMethods(),
@@ -137,10 +151,11 @@ public final class Main {
                inspect.getReferredClassesWithModifiers(Modifier.ABSTRACT),
                inspect.getReferredClasses().length,
                inspect.getAssociatedClasses(recursion).length,
-               inspect.getClassSize()
+               inspect.getClassSize(),
+               connections
       );
       
-      log.delim = " ";
+      l.delim = " ";
    }
    
    public static void detailedClassInfo(String className)
@@ -149,8 +164,8 @@ public final class Main {
    }
    
    public static void detailedClassInfo(Class cls) {
-      printHeader();
-      classInfo(cls);
+      printHeader(log);
+      classInfo(log,cls);
       log.pl("\n-----------------------");
       log.delim = ",";
       log.pl("method,number arguments");
@@ -161,18 +176,18 @@ public final class Main {
       log.pl();
    }
    
-   public static void printHeader() {
-      log.delim = ",";
-      log.p("class","methods","constructors","public methods","private methods",
-               "static methods","abstract methods","native methods",
-               "synchronized methods","final methods","members",
-               "public members","private members","protected members",
+   public static void printHeader(Log l) {
+      l.delim = ",";
+      l.p("Id","Label","class","methods","constructors","public methods",
+               "private methods","static methods","abstract methods",
+               "native methods","synchronized methods","final methods",
+               "members","public members","private members","protected members",
                "synchronized members","final members", "interface classes",
                "abstract classes", "directly associated classes",
-               "indirectly associated classes", "class size");
+               "indirectly associated classes", "class size", "connections");
       
-      log.delim = " ";
-      log.pl();
+      l.delim = " ";
+      l.pl();
    }
 
 }
