@@ -6,13 +6,20 @@ package uk.ac.aber.dcs.odj.reflection;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 
 /**
- * Class for analyzing other classes (recursively).
+ * <p>Class for analyzing other classes (recursively). Extracts a variety of
+ * information about a class using reflection.</p>
+ * 
+ * <p>NOTE: The methods in this class may not work for some classes! It seems
+ * that more complex classes which are final implementations of things
+ * (seen a lot in the Sun CORBA classes), have static constructors that run
+ * even when we're simply reflecting on those classes! If you find that strange
+ * exceptions are being thrown, omit the classes causing them for now.</p>
+ * 
  * @author Owain Jones [odj@aber.ac.uk]
  *
  */
@@ -178,9 +185,11 @@ public class ClassInspector {
     */
    public Class[] getReferredClasses() {
       
-      // It's likely this will be called multiple times but will always return
-      // the same result so keep the result cached in the "referredClasses"
-      // field.
+      /*
+       * It's likely this will be called multiple times but will always return
+       * the same result so keep the result cached in the "referredClasses"
+       * field.
+       */
       if(this.referredClasses == null) {
          Class source = this.inspectedClass;
          HashSet<Class> associatedClasses = new HashSet<Class>();
@@ -201,8 +210,10 @@ public class ClassInspector {
             associatedClasses.add(c);
          }
          
-         // Add any other classes (NOTE: may already be done in getInnerClasses
-         // - still unsure how getDeclaredX() and getX() methods differ
+         /*
+          * Add any other classes (NOTE: may already be done in getInnerClasses
+          * - still unsure how getDeclaredX() and getX() methods differ)
+          */
          associatedClasses.addAll(Arrays.asList(source.getClasses()));
          
          // Get the superclass (what this class extends).
@@ -214,8 +225,10 @@ public class ClassInspector {
          // Get all the classes used as method arguments and return values.
          associatedClasses.addAll(getInnerClasses(source));
          
-         // Remove any classes that are primitive (int, bool, null, void etc.)
-         // as well as any Arrays, from the list.
+         /*
+          * Remove any classes that are primitive (int, bool, null, void etc.)
+          * as well as any Arrays, from the list.
+          */
          Iterator<Class> iter;
          for(iter = associatedClasses.iterator(); iter.hasNext();) {
             Class c = iter.next();
@@ -224,11 +237,13 @@ public class ClassInspector {
             }
          }
          
-         // Add all the classes we've just picked up to a global, static set
-         // of classes - this can be used at the end of inspecting
-         // all the classes we want, to generate nodes/edges for a network
-         // graph which will show the association/connectivity between classes
-         // in the system as a whole.
+         /*
+          * Add all the classes we've just picked up to a global, static set
+          * of classes - this can be used at the end of inspecting
+          * all the classes we want, to generate nodes/edges for a network
+          * graph which will show the association/connectivity between classes
+          * in the system as a whole.
+          */
          ClassInspector.inspectedClasses.addAll(associatedClasses,source);
          
          this.associatedClasses = associatedClasses.toArray(new Class[0]);
@@ -269,32 +284,68 @@ public class ClassInspector {
    }
    
    /**
-    * 
-    * @param source
-    * @param depth
-    * @return
+    * Recursively search for classes which are indirectly connected to the
+    * specified class.
+    * @param source The class to inspect/start the search from
+    * @param depth Depth of recursion: -1 for infinite, >= 0 for a depth-limited
+    * search
+    * @return All the classes used by both the inspected class and its connected
+    * classes, up to the depth specified by 'depth' parameter.
     */
    public static Class[] getAssociatedClasses(Class source,int depth) {
       return new ClassInspector(source).getAssociatedClasses(depth);
    }
    
-   public static Class[] getAssociatedClasses(Class source,
+   /*
+    * Used internally to keep track of the recursive search.
+    */
+   private static Class[] getAssociatedClasses(Class source,
             HashSet<Class> checked,int depth,int max) {
       return new ClassInspector(source).getAssociatedClasses(checked,depth,max);
    }
    
+   /**
+    * Recursively search for classes which are indirectly connected to the
+    * inspected class.
+    * @param depth Depth of recursion: -1 for infinite, >= 0 for a depth-limited
+    * search
+    * @return All the classes used by both the inspected class and its connected
+    * classes, up to the depth specified by the 'depth' parameter.
+    */
    public Class[] getAssociatedClasses(int depth) {
+      // Start the recursive search with an empty set and a current depth of 0.
       return this.getAssociatedClasses(new HashSet<Class>(),0,depth);
    }
    
-   public Class[] getAssociatedClasses(HashSet<Class> checked,
+   /*
+    * checked: the set of already-inspected classes
+    * depth: current depth
+    * max: depth at which to stop
+    */
+   private Class[] getAssociatedClasses(HashSet<Class> checked,
             int depth,int max) {
+      
+      // Stop the recursion if the current depth is greater than the maximum
       if(depth > max && max != -1) return new Class[0];
+      
       HashSet<Class> relatedClasses = new HashSet<Class>();
+      
+      /*
+       * Add all the directly-connected (those which are used in the inspected
+       * class itself) to a set
+       */
       Class[] associatedClasses = this.getReferredClasses();
       relatedClasses.addAll(Arrays.asList(associatedClasses));
       
+      /*
+       * Then iterate through that list of classes and recursively inspect each
+       * one.
+       */
       for(Class c : associatedClasses) {
+         
+         /*
+          * Only check a class if it hasn't been looked at before however.
+          */
          if(!checked.contains(c)) {
             checked.add(c);
             Class[] tmp = ClassInspector.getAssociatedClasses(c,checked,
@@ -304,12 +355,26 @@ public class ClassInspector {
          }
       }
       
+      /*
+       * Add all the classes we've just picked up to a global, static set
+       * of classes - this can be used at the end of inspecting
+       * all the classes we want, to generate nodes/edges for a network
+       * graph which will show the association/connectivity between classes
+       * in the system as a whole.
+       */
       ClassInspector.inspectedClasses.addAll(
                relatedClasses,this.inspectedClass
       );
       return relatedClasses.toArray(new Class[0]);
    }
    
+   /**
+    * Get all the classes directly linked to by the inspected class, which have
+    * the specified modifiers - use for finding default/protected/abstract etc.
+    * classes.
+    * @param modifiers Bitfield of the constants in {@link Modifier}
+    * @return Number of classes which have these modifiers.
+    */
    public int getReferredClassesWithModifiers(int modifiers) {
       Class[] classes = this.getReferredClasses();
       int count = 0;
@@ -321,6 +386,15 @@ public class ClassInspector {
       return count;
    }
 
+   /**
+    * Get all the classes weakly associated with the inspected class, which have
+    * the specified modifiers - use for finding default/protected/abstract etc.
+    * classes.
+    * @param modifiers Bitfield of the constants in {@link Modifier}
+    * @param depth Recursion limit: -1 for infinite, >= 0 to do a depth-limited
+    * search.
+    * @return Number of classes which have these modifiers.
+    */
    public int getAssociatedClassesWithModifiers(int modifiers, int depth) {
       Class[] classes = this.getAssociatedClasses(depth);
       int count = 0;
@@ -332,6 +406,14 @@ public class ClassInspector {
       return count;
    }
 
+   /**
+    * Get all the members (fields) for the inspected class which have the
+    * specified modifiers - can be used to get the number of public/private/
+    * static/final methods etc.
+    * @param modifiers Bitfield of the constants in {@link Modifier}
+    * @return Number of methods in the inspected class which have these
+    * modifiers.
+    */
    public int getMembersWithModifiers(int modifiers) {
       int count = 0;
       Field[] fields = inspectedClass.getDeclaredFields();
@@ -344,6 +426,14 @@ public class ClassInspector {
       return count;
    }
    
+   /**
+    * Get all the methods for the inspected class which have the specified
+    * modifiers - can be used to get the number of public/private/static/final
+    * methods etc.
+    * @param modifiers Bitfield of the constants in {@link Modifier}
+    * @return Number of methods in the inspected class which have these
+    * modifiers.
+    */
    public int getMethodsWithModifiers(int modifiers) {
       int count = 0;
       Method[] methods = inspectedClass.getDeclaredMethods();

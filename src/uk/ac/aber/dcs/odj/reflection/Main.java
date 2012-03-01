@@ -3,16 +3,11 @@
  */
 package uk.ac.aber.dcs.odj.reflection;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Vector;
@@ -30,10 +25,12 @@ public final class Main {
    public static Log nodes;
    public static Log edges;
    public static int recursion = -1;
+   public static String file = "input.txt";
    
    public static void main(String[] args)
             throws InterruptedException, FileNotFoundException {
-      if(args.length == 2) recursion = Integer.parseInt(args[1]); 
+      if(args.length > 0) file = args[0];
+      if(args.length > 1) recursion = Integer.parseInt(args[1]); 
       try {
          log = new Log(OUTPUT);
          nodes = new Log("nodes.txt");
@@ -46,7 +43,7 @@ public final class Main {
          log.e("Logging to console");
       }
 
-      BufferedReader input = new BufferedReader(new FileReader(args[0]));
+      BufferedReader input = new BufferedReader(new FileReader(file));
       Vector<String> inputArgs = new Vector<String>();
       try {
          while(input.ready()) {
@@ -81,14 +78,8 @@ public final class Main {
       }
       
       // Print nodes list to nodes.txt - to be used by Gephi
-      //nodes.pl("Id,Label,Connections");
       printHeader(nodes);
       nodes.delim = ",";
-      /*for(Entry<Class,HashSet<Class>> e :
-         ClassInspector.getAllInspectedClasses().entrySet()) {
-         nodes.pl(e.getKey().getName(),e.getKey().getSimpleName(),
-                  e.getValue().size());
-      }*/
       ClassMap map = (ClassMap) ClassInspector.getAllInspectedClasses().clone();
       for(Class c : map.keySet()) {
          classInfo(nodes,c);
