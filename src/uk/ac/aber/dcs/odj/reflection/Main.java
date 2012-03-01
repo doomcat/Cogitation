@@ -2,12 +2,20 @@
  *
  */
 package uk.ac.aber.dcs.odj.reflection;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map.Entry;
+import java.util.Vector;
 
 import uk.co.slashingedge.utils.Log;
 
@@ -21,8 +29,11 @@ public final class Main {
    public static Log log;
    public static Log nodes;
    public static Log edges;
+   public static int recursion = -1;
    
-   public static void main(String[] args) throws InterruptedException {
+   public static void main(String[] args)
+            throws InterruptedException, FileNotFoundException {
+      if(args.length == 2) recursion = Integer.parseInt(args[1]); 
       try {
          log = new Log(OUTPUT);
          nodes = new Log("nodes.txt");
@@ -34,22 +45,38 @@ public final class Main {
          edges = Log.logger;
          log.e("Logging to console");
       }
+
+      BufferedReader input = new BufferedReader(new FileReader(args[0]));
+      Vector<String> inputArgs = new Vector<String>();
+      try {
+         while(input.ready()) {
+            String line = input.readLine();
+            if(line.startsWith("//")) continue; // ignore comments in input
+            inputArgs.add(line);
+         }
+      } catch (IOException e1) {
+         log.e("Error reading input file");
+      }
+      args = inputArgs.toArray(new String[0]);
       
       log.width = -1;
       nodes.width = -1;
       edges.width = -1;
       String[][] references = new String[args.length][];
 
+      // Print information about each class in CSV form so I can paste the lines
+      // into a spreadsheet easily.
       for(int i=0; i<args.length; i++) {
          String arg = args[i];
          try {
             log.pl("//START CLASS INFO: ",arg);
+            log.e(arg);
             detailedClassInfo(arg);
             log.pl("//END CLASS INFO:",arg,"\n");
-         } catch(ClassNotFoundException e) {
-            Thread.sleep(50);
-            log.e("Class Not Found:",arg,"\n");
-            Thread.sleep(50);
+         } catch(Exception e) {
+            Thread.sleep(10);
+            log.e(e.toString());
+            Thread.sleep(10);
          }
       }
       
@@ -65,11 +92,11 @@ public final class Main {
       // Print edges list to edges.txt - to be used by Gephi
       edges.pl("Source,Target");
       edges.delim = ",";
-      
       for(Entry<Class,HashSet<Class>>e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
          for(Class c : e.getValue()) {
-            if(e.getKey() != c && e.getKey().getName() != null && c.getName() != null) {
+            if(e.getKey() != c && e.getKey().getName() != null &&
+                     c.getName() != null) {
                edges.pl(c.getName(),e.getKey().getName());
             }
          }
@@ -109,7 +136,7 @@ public final class Main {
                inspect.getReferredClassesWithModifiers(Modifier.INTERFACE),
                inspect.getReferredClassesWithModifiers(Modifier.ABSTRACT),
                inspect.getReferredClasses().length,
-               inspect.getAssociatedClasses().length
+               inspect.getAssociatedClasses(recursion).length
       );
       
       log.delim = " ";
