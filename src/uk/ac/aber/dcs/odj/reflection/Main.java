@@ -136,7 +136,8 @@ public final class Main {
                inspect.getReferredClassesWithModifiers(Modifier.INTERFACE),
                inspect.getReferredClassesWithModifiers(Modifier.ABSTRACT),
                inspect.getReferredClasses().length,
-               inspect.getAssociatedClasses(recursion).length
+               inspect.getAssociatedClasses(recursion).length,
+               inspect.getClassSize()
       );
       
       log.delim = " ";
@@ -168,8 +169,7 @@ public final class Main {
                "public members","private members","protected members",
                "synchronized members","final members", "interface classes",
                "abstract classes", "directly associated classes",
-               "indirectly associated classes", "# references",
-               "referred classes [list]");
+               "indirectly associated classes", "class size");
       
       log.delim = " ";
       log.pl();

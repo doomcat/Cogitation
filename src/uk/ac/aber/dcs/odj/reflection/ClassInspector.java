@@ -355,7 +355,32 @@ public class ClassInspector {
       }
       return count;
    }
+
+   /**
+    * @return Number of methods, fields & interfaces implemented by the
+    * inspected class.
+    */
+   public int getClassSize() {
+      return
+               inspectedClass.getDeclaredMethods().length +
+               inspectedClass.getDeclaredFields().length +
+               inspectedClass.getInterfaces().length;
+   }
+
+   /**
+    * @param cls Class to inspect
+    * @return Number of methods, fields & interfaces implemented by the
+    * specified class.
+    */
+   public static int getClassSize(Class cls) {
+      return new ClassInspector(cls).getClassSize();
+   }
    
+   /**
+    * @return A Hashtable of all the classes EVER inspected by ALL
+    * ClassInspector instances in the current runtime. Can be used to get
+    * the relationships/connections between specific classes.
+    */
    public static ClassMap getAllInspectedClasses() {
       return ClassInspector.inspectedClasses;
    }
