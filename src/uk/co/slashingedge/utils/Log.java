@@ -57,7 +57,7 @@ public final class Log {
    public Log(String out) throws FileNotFoundException {
       this(new PrintStream(out),System.err);
    }
-   
+ 
    /**
     * Create a Log object with both output & error directed to specified files.
     * @param out The name of the file to direct output to.

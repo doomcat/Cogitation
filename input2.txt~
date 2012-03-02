@@ -1,0 +1,20 @@
+// Math: I predict will have lots of static methods?
+java.lang.Math
+//
+// Same for string
+java.lang.String
+//
+// Socket: lots more constructors, private fields, less static methods
+java.net.Socket
+//
+// File: mixture of both
+java.io.File
+//
+// Calendar: lots of private methods? And public fields
+java.util.Calendar
+//
+// What about a POJO?
+java.lang.Object
+//
+// Hey dawg I heard you liked reflecting reflection tools so I reflected a reflection tool using the reflection tool I'm reflecting
+uk.ac.aber.dcs.odj.reflection.ClassInspector

@@ -194,6 +194,10 @@ public class ClassInspector {
          Class source = this.inspectedClass;
          HashSet<Class> associatedClasses = new HashSet<Class>();
          
+         // Add the actual class itself. This makes sense when making network
+         // graphs showing connectivity.
+         associatedClasses.add(source);
+         
          // If this class is internal to another class (Delegate class),
          // get its parent.
          if(source.getDeclaringClass() != null) {

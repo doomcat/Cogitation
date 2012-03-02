@@ -29,8 +29,19 @@ public final class Main {
    
    public static void main(String[] args)
             throws InterruptedException, FileNotFoundException {
+      if(args.length == 0) {
+         printHelp();
+         return;
+      }
       if(args.length > 0) file = args[0];
-      if(args.length > 1) recursion = Integer.parseInt(args[1]); 
+      if(args.length > 1) recursion = Integer.parseInt(args[1]);
+      for(String arg : args) {
+         if(arg == "/?" || arg.equalsIgnoreCase("-h") ||
+                  arg.equalsIgnoreCase("--help")) {
+            printHelp();
+            return;
+         }
+      }
       try {
          log = new Log(OUTPUT);
          nodes = new Log("nodes.txt");
@@ -43,28 +54,43 @@ public final class Main {
          log.e("Logging to console");
       }
 
+      /**
+       * Parse input text file for list of classes to inspect
+       */
       BufferedReader input = new BufferedReader(new FileReader(file));
       Vector<String> inputArgs = new Vector<String>();
       try {
          while(input.ready()) {
             String line = input.readLine();
-            if(line.startsWith("//")) continue; // ignore comments in input
-            inputArgs.add(line);
+            // Ignore empty lines & lines which are comments
+            if(!line.startsWith("//") && line != "") {
+               inputArgs.add(line);
+            }
          }
       } catch (IOException e1) {
          log.e("Error reading input file");
       }
       args = inputArgs.toArray(new String[0]);
       
+      // Disable word-wrapping on all the output loggers.
       log.width = -1;
       nodes.width = -1;
       edges.width = -1;
+      
       String[][] references = new String[args.length][];
 
+      // "Warm up" the table 
+      for(String arg : args) {
+         try {
+            ClassInspector inspect = new ClassInspector(arg);
+            inspect.getAssociatedClasses(recursion);
+         } catch (ClassNotFoundException e1) {
+         }
+      }
+      
       // Print information about each class in CSV form so I can paste the lines
       // into a spreadsheet easily.
-      for(int i=0; i<args.length; i++) {
-         String arg = args[i];
+      for(String arg : args) {
          try {
             log.pl("//START CLASS INFO: ",arg);
             log.e(arg);
@@ -87,18 +113,22 @@ public final class Main {
       }
       
       // Print edges list to edges.txt - to be used by Gephi
-      edges.pl("Source,Target");
+      edges.pl("Source,Target,Weight");
       edges.delim = ",";
       for(Entry<Class,HashSet<Class>>e :
          ClassInspector.getAllInspectedClasses().entrySet()) {
          for(Class c : e.getValue()) {
            if(e.getKey() != c && e.getKey().getName() != null &&
                      c.getName() != null) {
-               edges.pl(c.getName(),e.getKey().getName());
+              int weight = 1;
+              if(inputArgs.contains(c.getName())) weight = 3;
+              edges.pl(c.getName(),e.getKey().getName(),weight);
             }
          }
       }
       
+      // Reset the delimiters for all the output loggers in case I want to more
+      // logging later which isn't in comma-seperated-values form.
       nodes.delim = " " ;
       edges.delim = " ";
       log.delim = " ";
@@ -111,8 +141,13 @@ public final class Main {
    }
    
    public static void classInfo(Log l, Class cls) {
-      l.delim = ",";
+      if(l != null) l.delim = ",";
       
+      /*
+       * Get the number of connections to this class, from the global table.
+       * NOTE: This won't be accurate until you've run through your classes
+       * once!
+       */
       ClassMap map = ClassInspector.getAllInspectedClasses();
       int connections = 0;
       if(map.containsKey(cls) && map.get(cls) != null) {
@@ -179,6 +214,17 @@ public final class Main {
       
       l.delim = " ";
       l.pl();
+   }
+   
+   public static void printHelp() {
+      System.out.println("No arguments given to program. Usage:\n");
+      System.out.println("\tjava Main <input file> [recursion depth=-1]\n");
+      System.out.println("Where recursion depth is the maximum depth any" +
+      		" recursive searches should\n" +
+      		"terminate at. -1 for infinite recursion.");
+      System.out.println("Input file should be a list of java classes " +
+      		"(including their package names),");
+      System.out.println("one class per line.");
    }
 
 }
