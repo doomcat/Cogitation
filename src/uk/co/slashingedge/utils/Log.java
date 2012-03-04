@@ -104,24 +104,25 @@ public final class Log {
     * StringBuilder objects are instanced.
     * @param level The output to log output too (ERROR or PRINT)
     * @param string The string to print
+    * @return the same instance of Log, for method chaining
     */
-   public void wrap(Level level, String string) {
+   public Log wrap(Level level, String string) {
       PrintStream output = this.out;
       if(level == Level.ERROR) output = this.err;
       
       if(width == -1) {
          output.print(string);
-         return;
+         return this;
       }
       
       if(string == "" | string == null) {
-         return;
+         return this;
       }
       
       String[] words = string.split(" ");
       if(words.length == 0) {
          output.print(string);
-         return;
+         return this;
       }
       
       int length = 0;
@@ -133,23 +134,29 @@ public final class Log {
          output.print(word+" ");
          length += word.length()+1;
       }
+      
+      return this;
    }
    
    /**
     * Print a string to one of the standard outputs
     * @param level Which output: ERROR (prints to Log.out) or PRINT (Log.err)
     * @param string The string to print
+    * @return the same instance of Log, for method chaining
     */
-   public void p(Level level, String string) {
+   public Log p(Level level, String string) {
       this.wrap(level,string);
+      return this;
    }
    
    /**
     * Print a string to output (Log.out).
     * @param string The string to print
+    * @return the same instance of Log, for method chaining
     */
-   public void p(Object string) {
+   public Log p(Object string) {
       this.p(Level.PRINT,string);
+      return this;
    }
    
    /**
@@ -157,8 +164,9 @@ public final class Log {
     * between strings (same as Python's print statement) 
     * @param level Which output: ERROR (prints to Log.err) or PRINT (Log.out)
     * @param strings Strings to print
+    * @return the same instance of Log, for method chaining
     */
-   public void p(Level level, Object ... strings) {
+   public Log p(Level level, Object ... strings) {
       StringBuilder sb = new StringBuilder();
       for(int i=0; i<strings.length; i++) {
          sb.append(strings[i]);
@@ -167,61 +175,74 @@ public final class Log {
          }
       }
       this.p(level,sb.toString());
+      return this;
    }
    
    /**
     * Print a list of objects to output (Log.out), with a delimiter between
     * the strings (same as Python's print statement).
     * @param strings Objects to print
+    * @return the same instance of Log, for method chaining
     */
-   public void p(Object ... strings) {
+   public Log p(Object ... strings) {
       this.p(Level.PRINT,strings);
+      return this;
    }
    
    /**
     * Print a list of objects to error stream (Log.err).
     * @param strings Objects to print
+    * @return the same instance of Log, for method chaining
     */
-   public void e(Object ... strings) {
+   public Log e(Object ... strings) {
       this.p(Level.ERROR,strings);
       this.p(Level.ERROR,"\n");
+      return this;
    }
    
    /**
     * Print a list of objects to output to Log.out, with a delimiter between
     * the strings, followed by a newline (\n) character.
     * @param strings Objects to print
+    * @return the same instance of Log, for method chaining
     */
-   public void pl(Object ... strings) {
+   public Log pl(Object ... strings) {
       this.p(Level.PRINT,strings);
       this.p(Level.PRINT,"\n");
+      return this;
    }
 
    /**
     * Print a list of objects to the error stream (Log.err) with a delimiter
     * between the strings.
     * @param strings The objects to print
+    * @return Default Log object, for method chaining
     */
-   public static void err(Object ... strings) {
+   public static Log err(Object ... strings) {
       logger.e(strings);
+      return logger;
    }
    
    /**
     * Print a list of objects to the default output (System.out), with a
     * delimiter between them.
     * @param strings The objects to print
+    * @return Default Log object, for method chaining
     */
-   public static void print(Object ... strings) {
+   public static Log print(Object ... strings) {
       logger.p(strings);
+      return logger;
    }
    
    /**
     * Print a list of objects, with a delimiter between each one, and append
     * a newline (\n) character, to the default output (System.out).
     * @param strings The objects to print
+    * @return Default Log object, for method chaining
     */
-   public static void println(Object ... strings) {
+   public static Log println(Object ... strings) {
       logger.pl(strings);
+      return logger;
    }
    
 }
