@@ -61,7 +61,7 @@ public class ClassInspector {
     * annotations (i.e. abstract). 
     * @return Number of declared fields owned by the inspected class
     */
-   public int getNumberOfMembers() {
+   public int getNumberOfFields() {
       return inspectedClass.getDeclaredFields().length;
    }
 
@@ -135,7 +135,7 @@ public class ClassInspector {
     * @param className
     * @return
     */
-   public static HashSet<Class> getInnerClasses(Class className) {
+   private static final HashSet<Class> getInnerClasses(Class className) {
       HashSet<Class> innerClasses = new HashSet<Class>();
       
       for(Method m : className.getDeclaredMethods()) {
@@ -433,7 +433,7 @@ public class ClassInspector {
     * @return Number of methods in the inspected class which have these
     * modifiers.
     */
-   public int getMembersWithModifiers(int modifiers) {
+   public int getFieldsWithModifiers(int modifiers) {
       int count = 0;
       Field[] fields = inspectedClass.getDeclaredFields();
       for(Field f : fields) {

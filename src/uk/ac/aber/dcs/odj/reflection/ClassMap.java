@@ -44,12 +44,12 @@ public class ClassMap extends Hashtable<Class, HashSet<Class>> {
       return this.get(c).size();
    }
    
-   public Class[] getClasses(Class c) {
-      return this.get(c).toArray(new Class[0]);
+   public Class[] getClasses(Class connectedTo) {
+      return this.get(connectedTo).toArray(new Class[0]);
    }
    
-   public void addAll(Collection<Class> collection, Class parent) {
-      Class[] coll = collection.toArray(new Class[0]);
+   public void addAll(Collection<Class> classes, Class parent) {
+      Class[] coll = classes.toArray(new Class[0]);
       for(Class c : coll) this.add(c,parent);
    }
 }
