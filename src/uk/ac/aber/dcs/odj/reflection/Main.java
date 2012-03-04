@@ -76,15 +76,15 @@ public final class Main {
       log.width = -1;
       nodes.width = -1;
       edges.width = -1;
-      
-      String[][] references = new String[args.length][];
 
-      // "Warm up" the table 
+      // "Warm up" the table: This means that the stats in output.txt and
+      // nodes.txt will be the same (specifically the 'connections' column,
+      // which requires the hashtable to be fully populated beforehand)
       for(String arg : args) {
          try {
             ClassInspector inspect = new ClassInspector(arg);
             inspect.getAssociatedClasses(recursion);
-         } catch (ClassNotFoundException e1) {
+         } catch (Throwable e1) {
          }
       }
       
@@ -96,7 +96,7 @@ public final class Main {
             log.e(arg);
             detailedClassInfo(arg);
             log.pl("//END CLASS INFO:",arg,"\n");
-         } catch(Exception e) {
+         } catch(Throwable e) {
             Thread.sleep(10);
             log.e(e.toString());
             Thread.sleep(10);
@@ -137,7 +137,7 @@ public final class Main {
    
    public static void classInfo(Log l, String cls)
             throws ClassNotFoundException {
-      classInfo(log,Class.forName(cls));
+      classInfo(log,Class.forName(cls,false,null));
    }
    
    public static void classInfo(Log l, Class cls) {
@@ -186,7 +186,7 @@ public final class Main {
    
    public static void detailedClassInfo(String className)
             throws ClassNotFoundException {
-      detailedClassInfo(Class.forName(className));
+      detailedClassInfo(Class.forName(className,false,null));
    }
    
    public static void detailedClassInfo(Class cls) {

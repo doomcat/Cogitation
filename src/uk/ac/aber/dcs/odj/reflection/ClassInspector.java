@@ -36,7 +36,15 @@ public class ClassInspector {
     * @throws ClassNotFoundException
     */
    public ClassInspector(String cls) throws ClassNotFoundException {
-      this(Class.forName(cls));
+      
+      /*
+       * Which forName() method is used is important:
+       * http://stackoverflow.com/a/9550852/374153
+       * Using the one which takes a boolean, so that none of the classes
+       * are accidentally initialized (stops them throwing exceptions when
+       * reflected upon etc.)
+       */
+      this(Class.forName(cls,false,null));
    }
    
    /**
