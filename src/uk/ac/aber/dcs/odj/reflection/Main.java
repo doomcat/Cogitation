@@ -11,6 +11,7 @@ import java.lang.reflect.Modifier;
 import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Vector;
+import com.mojang.left4kdead.G;
 
 import uk.co.slashingedge.utils.Log;
 
@@ -46,12 +47,11 @@ public final class Main {
          log = new Log(OUTPUT);
          nodes = new Log("nodes.txt");
          edges = new Log("edges.txt");
-         log.e("Logging to",OUTPUT);
+         System.out.println("Logging to "+OUTPUT+". Recursion lvl: "+recursion);
       } catch (FileNotFoundException e1) {
          log = Log.logger;
          nodes = Log.logger;
          edges = Log.logger;
-         log.e("Logging to console");
       }
 
       /**
@@ -93,13 +93,11 @@ public final class Main {
       for(String arg : args) {
          try {
             log.pl("//START CLASS INFO: ",arg);
-            log.e(arg);
+            //System.out.println(arg);
             detailedClassInfo(arg);
             log.pl("//END CLASS INFO:",arg,"\n");
          } catch(Throwable e) {
-            Thread.sleep(10);
             log.e(e.toString());
-            Thread.sleep(10);
          }
       }
       
@@ -135,9 +133,19 @@ public final class Main {
 
    }
    
+   /*
+    * http://stackoverflow.com/a/9550852/374153
+    * Using the 3-argument Class.forName method stops the classes from being
+    * instanced (no static constructors are run).
+    */
+   public static Class getClassForName(String className)
+            throws ClassNotFoundException {
+      return Class.forName(className,false,Main.class.getClassLoader());
+   }
+   
    public static void classInfo(Log l, String cls)
             throws ClassNotFoundException {
-      classInfo(log,Class.forName(cls,false,null));
+      classInfo(log,getClassForName(cls));
    }
    
    public static void classInfo(Log l, Class cls) {
@@ -186,7 +194,7 @@ public final class Main {
    
    public static void detailedClassInfo(String className)
             throws ClassNotFoundException {
-      detailedClassInfo(Class.forName(className,false,null));
+      detailedClassInfo(getClassForName(className));
    }
    
    public static void detailedClassInfo(Class cls) {

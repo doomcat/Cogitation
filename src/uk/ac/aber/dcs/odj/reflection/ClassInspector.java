@@ -28,6 +28,7 @@ public class ClassInspector {
    private Class inspectedClass;
    private Class[] referredClasses;
    private Class[] associatedClasses;
+   private int lastDepth = 0;
 
    /**
     * Find the class with a specified name. Throws an exception if no such
@@ -311,7 +312,7 @@ public class ClassInspector {
    /*
     * Used internally to keep track of the recursive search.
     */
-   private static Class[] getAssociatedClasses(Class source,
+   private final static Class[] getAssociatedClasses(Class source,
             HashSet<Class> checked,int depth,int max) {
       return new ClassInspector(source).getAssociatedClasses(checked,depth,max);
    }
@@ -325,8 +326,14 @@ public class ClassInspector {
     * classes, up to the depth specified by the 'depth' parameter.
     */
    public Class[] getAssociatedClasses(int depth) {
+      // Cache result if we've already done the recursive scan at this depth.
+      if(this.associatedClasses == null || this.lastDepth != depth) {
       // Start the recursive search with an empty set and a current depth of 0.
-      return this.getAssociatedClasses(new HashSet<Class>(),0,depth);
+         this.associatedClasses =
+            this.getAssociatedClasses(new HashSet<Class>(),0,depth);
+         this.lastDepth = depth;
+      }
+      return this.associatedClasses;
    }
    
    /*
@@ -334,7 +341,7 @@ public class ClassInspector {
     * depth: current depth
     * max: depth at which to stop
     */
-   private Class[] getAssociatedClasses(HashSet<Class> checked,
+   private final Class[] getAssociatedClasses(HashSet<Class> checked,
             int depth,int max) {
       
       // Stop the recursion if the current depth is greater than the maximum

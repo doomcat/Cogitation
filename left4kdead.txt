@@ -1,2 +1,0 @@
-// Inspect Notch's Left 4k Dead game because it's neat and very not-OO
-com.mojang.left4kdead.G
